@@ -1,0 +1,12 @@
+nodejs_version: "20"
+omit_containers:
+  - db
+web_extra_exposed_ports:
+  - name: astro
+    container_port: 4321
+    http_port: 4320
+    https_port: 4321
+web_extra_daemons:
+  - name: astro-dev
+    command: "bash -c 'if [ ! -d node_modules ]; then npm ci; fi && npm run dev -- --host 0.0.0.0 --port 4321'"
+    directory: /var/www/html
