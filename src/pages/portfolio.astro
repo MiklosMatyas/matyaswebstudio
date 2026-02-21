@@ -1,0 +1,63 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Image from '~/components/common/Image.astro';
+
+import { portfolioHero, portfolioItems } from '~/data/portfolio';
+
+const metadata = {
+  title: 'Portfólió',
+};
+
+const heroBackground =
+  typeof portfolioHero.image.src === 'string' ? portfolioHero.image.src : portfolioHero.image.src.src;
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    title={portfolioHero.title}
+    subtitle={portfolioHero.subtitle}
+    actions={[{ variant: 'primary', text: 'Kapcsolatfelvétel', href: '/contact' }]}
+  >
+    <Fragment slot="bg">
+      <div
+        class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={`background-image: url('${heroBackground}');`}
+      ></div>
+      <div class="absolute inset-0 bg-white/35 dark:bg-slate-900/35"></div>
+    </Fragment>
+  </Hero>
+
+  {
+    portfolioItems.map((item, index) => (
+      <Content
+        isReversed={index % 2 === 1}
+        isAfterContent={index > 0}
+        items={item.items}
+      >
+        <Fragment slot="content">
+          <p>{item.description}</p>
+        </Fragment>
+        <Fragment slot="image">
+          <Image
+            class="mx-auto w-full max-w-xs md:max-w-sm rounded-lg shadow-lg"
+            width={500}
+            height={500}
+            widths={[320, 480, 640]}
+            sizes="(max-width: 768px) 320px, 420px"
+            layout="constrained"
+            {...item.image}
+          />
+        </Fragment>
+      </Content>
+    ))
+  }
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Kérj ajánlatot', href: '/contact' }]}
+    title="Hasonló megoldást szeretnél a vállalkozásodnak?"
+    subtitle="Mondd el a céljaidat, és készítünk egy jól felépített, üzletileg hasznos webes megoldást."
+  />
+</Layout>

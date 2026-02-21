@@ -11,5 +11,20 @@
   "yaml.schemas": {
     "./.vscode/astrowind/config-schema.json": "/src/config.yaml"
   },
-  "eslint.useFlatConfig": true
+  "eslint.useFlatConfig": true,
+  "piny.project_settings": {
+    "open-pages": [
+      "pinyfakepage.html"
+    ],
+    "urls": {
+      "pinyfakepage.html": {
+        "open-page-views": [
+          {
+            "w": 640,
+            "h": 0
+          }
+        ]
+      }
+    }
+  }
 }
