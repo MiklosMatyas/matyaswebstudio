@@ -1,9 +1,16 @@
 ---
 import { SITE } from 'astrowind:config';
+import studioLogo from '~/assets/images/matyas-web-studio-logo-black.svg';
+
+const logoSrc = typeof studioLogo === 'string' ? studioLogo : studioLogo.src;
 ---
 
-<span
-  class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
->
-  🚀 {SITE?.name}
-</span>
+<img
+  src={logoSrc}
+  alt={SITE?.name ?? 'Matyas Web Studio'}
+  width="208"
+  height="80"
+  class="self-center h-10 md:h-9 w-auto ml-2 rtl:ml-0 rtl:mr-2"
+  loading="eager"
+  decoding="async"
+/>

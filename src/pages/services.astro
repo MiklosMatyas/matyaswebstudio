@@ -5,220 +5,221 @@ import Features2 from '~/components/widgets/Features2.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import Layout from '~/layouts/PageLayout.astro';
+import webDesignImage from '~/assets/images/weboldal-tervezes.webp';
+import heroBg from '~/assets/images/weboldal-keszites-hero.webp';
+import webSystemImage from '~/assets/images/web-system.webp';
+import oskarbImage from '~/assets/images/oskarb.jpeg';
 
 const metadata = {
-  title: 'Services',
+  title: 'Szolgáltatások',
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-
   <Hero
-    tagline="Services"
-    title="Elevate your projects with our stunning templates"
-    subtitle="Explore our meticulously crafted templates tailored to various industries and purposes. From captivating presentations to functional website designs, we offer the tools you need to succeed."
-    actions={[{ variant: 'primary', target: '_blank', text: 'Start exploring', href: '/' }]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'AstroWind Hero Image',
-    }}
-  />
-
-  <!-- Features2 Widget ************** -->
+    tagline="Webfejlesztés és online növekedési támogatás Kis- és középvállalkozásoknak"
+    title="Szolgáltatások"
+    subtitle="Olyan szolgáltatási rendszert adunk, amelyben a weboldal, a marketing és az ügyfélkezelés együtt dolgozik. A cél a stabil online jelenlét, a jobb ügyfélélmény és a kiszámíthatóbb érdeklődői folyamat."
+    actions={[{ variant: 'primary', text: 'Kapcsolatfelvétel', href: '/contact' }]}
+  >
+    <Fragment slot="bg">
+      <div
+        class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={`background-image: url('${heroBg.src}');`}
+      ></div>
+      <div class="absolute inset-0 bg-white/35 dark:bg-slate-900/35"></div>
+    </Fragment>
+  </Hero>
 
   <Features2
-    title="Explore our diverse templates"
-    subtitle="Discover our selection below to streamline and elevate your projects."
+    title="Fő szolgáltatási területek"
+    subtitle="Az alábbi területeken segítünk napi szinten vállalkozásoknak."
     columns={3}
     items={[
       {
-        title: 'Educational',
+        title: 'Céges weboldal készítés',
         description:
-          'By harmonizing instructional design and visual appeal, templates streamline content creation for varied materials, expediting development and cultivating engaging educational spaces.',
-        icon: 'tabler:school',
-      },
-      {
-        title: 'Interior Design',
-        description:
-          'Crafting functional, visually appealing spaces for residential and commercial use. Templates emphasize layout, colors, and furniture setups, offering a versatile toolkit for your design vision.',
-        icon: 'tabler:home-star',
-      },
-      {
-        title: 'Photography',
-        description: `Empowering photographers, our templates facilitate captivating storytelling. With a keen focus on layout, galleries, and typography, they cater to both professionals and enthusiasts.`,
-        icon: 'tabler:photo',
-      },
-      {
-        title: 'E-commerce',
-        description:
-          'Developing engaging online stores, our E-commerce templates ensure a dynamic presence to effectively showcase products. Ideal for startups or revamps.',
-        icon: 'tabler:shopping-cart',
-      },
-      {
-        title: 'Blog',
-        description:
-          'With attention to typography, these templates empower effective content presentation for writers at any stage, ensuring visually engaging and user-friendly blogs.',
-        icon: 'tabler:article',
-      },
-      {
-        title: 'Business',
-        description:
-          'Providing polished options for effective visual communication, these templates empower both startups and established companies for a professional brand presence.',
+          'Modern, mobilbarát és gyors weboldalak fejlesztése, amelyek üzleti célokat támogatnak.',
         icon: 'tabler:building-store',
       },
       {
-        title: 'Branding',
+        title: 'Weboldal karbantartás',
         description:
-          'Offering pre-designed elements for a consistent brand identity, including logos and marketing materials. Ideal for new ventures or revamps.',
-        icon: 'tabler:arrow-big-up-lines',
+          'Frissítések, hibajavítás, teljesítményoptimalizálás és folyamatos technikai támogatás.',
+        icon: 'tabler:tool',
       },
       {
-        title: 'Medical',
-        description: `From presentations to patient forms, these tools enhance communication effectiveness for healthcare professionals. Ideal for medical practices and research pursuits.`,
-        icon: 'tabler:vaccine',
+        title: 'Social media és tartalom',
+        description: `Platformokra szabott tartalomkészítés és ütemezett kommunikáció egységes arculati iránnyal.`,
+        icon: 'tabler:brand-instagram',
       },
       {
-        title: 'Fashion Design',
+        title: 'Hirdetéskezelés',
         description:
-          'With attention to detail, customization, and contemporary design, they empower designers to showcase ideas cohesively. Ideal for all levels of designers.',
-        icon: 'tabler:tie',
+          'Meta és Google Ads kampányok tervezése, indítása, mérése és folyamatos optimalizálása.',
+        icon: 'tabler:speakerphone',
+      },
+      {
+        title: 'Google cégprofil és értékelések',
+        description:
+          'A láthatóság és bizalom erősítése friss cégprofilkezeléssel és értékelésgyűjtési folyamatokkal.',
+        icon: 'tabler:star',
+      },
+      {
+        title: 'CRM rendszer',
+        description:
+          'Érdeklődők, ügyfelek és feladatok egy központi rendszerben, átlátható státuszokkal.',
+        icon: 'tabler:users-group',
+      },
+      {
+        title: 'Értékesítési automatizálás',
+        description:
+          'Email, SMS és utánkövetési folyamatok automatizálása a gyorsabb kiszolgálásért.',
+        icon: 'tabler:route-alt-left',
+      },
+      {
+        title: 'AI asszisztens',
+        description: `Betanított chatbot weboldalra és üzenetküldő csatornákra, 0-24 válaszadással.`,
+        icon: 'tabler:robot',
+      },
+      {
+        title: 'Analitika és riportok',
+        description:
+          'Valós adatokra épülő riportok a kampányok, oldalteljesítmény és ügyfélfolyamatok fejlesztéséhez.',
+        icon: 'tabler:chart-bar',
       },
     ]}
   />
 
-  <!-- Content Widget **************** -->
-
   <Content
     isReversed
+    title="Weboldal fejlesztés: a szolgáltatásaink alapja"
     items={[
       {
-        title: 'High-Quality Designs',
+        title: 'Üzleti célokra tervezett struktúra',
         description:
-          'Our templates feature top-tier designs that ensure a professional and polished appearance for your projects.',
-        icon: 'tabler:wand',
+          'Az oldalfelépítést a célközönség és az értékesítési folyamat alapján alakítjuk ki.',
+        icon: 'tabler:target-arrow',
       },
       {
-        title: 'Customization Tools',
+        title: 'Gyors és reszponzív működés',
         description:
-          'Tailor each template to your unique needs with user-friendly customization tools that let you personalize colors, fonts, and content.',
-        icon: 'tabler:settings',
+          'Mobilon és asztali környezetben is stabil, gyors felhasználói élményt biztosító megoldásokat készítünk.',
+        icon: 'tabler:device-mobile',
       },
       {
-        title: 'Pre-Designed Elements',
+        title: 'Technikai SEO alapok',
         description:
-          'Save time and effort with our ready-to-use elements, including graphics, icons, and layouts that enhance the visual appeal of your creations.',
-        icon: 'tabler:presentation',
+          'Keresőbarát technikai háttér, tiszta kódszerkezet és megfelelő oldalszintű beállítások.',
+        icon: 'tabler:search',
       },
       {
-        title: 'Preview and Mockup Views',
+        title: 'Későbbi bővíthetőség',
         description:
-          'Visualize the final outcome before making any changes using our preview and mockup views, ensuring your projects meet your expectations.',
-        icon: 'tabler:carousel-horizontal',
+          'A fejlesztés úgy készül, hogy új aloldalak, új funkciók és integrációk egyszerűen hozzáadhatók legyenek.',
+        icon: 'tabler:plug-connected',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1525909002-1b05e0c869d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
-      alt: 'Features Image',
+      src: webDesignImage,
+      alt: 'Weboldal fejlesztés',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Main Features</h3>
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Mit jelent ez a gyakorlatban?</h3>
+      A weboldal az online működés központi eleme. Ezért a tartalmi logika, a design és a technikai felépítés is
+      összehangoltan készül, hogy a látogató gyorsan eligazodjon és könnyen kapcsolatba léphessen veled.
     </Fragment>
   </Content>
-
-  <!-- Content Widget **************** -->
 
   <Content
     isAfterContent
+    title="Miért hasznos ez a KKV szektorban?"
     items={[
       {
-        title: 'Time Savings',
+        title: 'Kiszámíthatóbb ügyfélkezelés',
         description:
-          'Streamline your workflow, enabling you to create stunning materials efficiently and allocate more time to your core tasks.',
-        icon: 'tabler:clock',
+          'A webes érdeklődések, űrlapok és kommunikációs pontok átlátható rendszerbe kerülnek.',
+        icon: 'tabler:timeline',
       },
       {
-        title: 'Professional Appearance',
+        title: 'Erősebb bizalomépítés',
         description:
-          'Elevate your projects with the polished and sophisticated look that our templates provide, making a lasting impression on your audience.',
-        icon: 'tabler:school',
+          'A professzionális megjelenés és a konzisztens kommunikáció segíti a döntést az érdeklődők oldalán.',
+        icon: 'tabler:shield-check',
       },
       {
-        title: 'Cost-Efficiency',
+        title: 'Jobb mérhetőség',
         description:
-          'Benefit from cost savings by avoiding the need for custom design work, as our templates offer professional-grade designs at a fraction of the cost.',
-        icon: 'tabler:coin',
+          'Analitikai adatok alapján pontosabban látható, mely csatornák és mely oldalak hoznak valódi eredményt.',
+        icon: 'tabler:gauge',
       },
       {
-        title: 'Instant Download',
+        title: 'Folyamatos fejlődési lehetőség',
         description:
-          'Enjoy immediate access to your chosen templates upon purchase, enabling you to begin working on your projects without delay.',
-        icon: 'tabler:file-download',
+          'A rendszeres finomhangolás és automatizálás hosszú távon is növeli a hatékonyságot.',
+        icon: 'tabler:trending-up',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1552664688-cf412ec27db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-      alt: 'Benefits Image',
+      src: webSystemImage,
+      alt: 'KKV együttműködés',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Benefits</h3>
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Szolgáltatás helyett rendszer</h3>
+      A cél egy olyan működés kialakítása, ahol a weboldal, a kampányok, a CRM és az utánkövetés ugyanazt az üzleti célt
+      támogatják: több releváns érdeklődőt és hatékonyabb ügyfélkiszolgálást.
     </Fragment>
   </Content>
 
-  <!-- Testimonials Widget *********** -->
-
   <Testimonials
-    title="Words from real customers"
+    title="Ügyfélvisszajelzések"
     testimonials={[
       {
-        testimonial: `The designs are not only visually appealing but also highly professional. The templates have saved me a significant amount of time while helping me make a lasting impression on my clients.`,
-        name: 'Emily Kennedy',
-        job: 'Front-end developer',
+        testimonial: `Miklós egy nagyon tehetséges fejlesztő, akivel remekül lehet együtt dolgozni. Világosan kommunikál, kedves hangnemű, és kérdéseket tesz fel, hogy megoldja a problémákat. Köszönöm!`,
+        name: 'Oskar B',
+        job: 'Norvégia',
         image: {
-          src: 'https://images.unsplash.com/photo-1618835962148-cf177563c6c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=930&q=80',
-          alt: 'Emily Kennedy Image',
+          src: oskarbImage,
+          alt: 'Ügyfél visszajelzés',
         },
       },
       {
-        testimonial: `It beautifully showcases my work, with its clean and elegant design that lets my photographs shine. Customization was a breeze, even for a non-tech person like me. The result is a professional and immersive portfolio that's garnered numerous compliments.`,
-        name: 'Sarah Hansen',
-        job: 'Photographer',
+        testimonial: `A CRM és az automatizált utánkövetés bevezetése után sokkal rendezettebb lett az ügyfélkezelésünk. Minden érdeklődő útja követhető, a csapat terhelése pedig csökkent.`,
+        name: 'Nagy Péter',
+        job: 'kereskedelmi vezető',
         image: {
           src: 'https://images.unsplash.com/photo-1561406636-b80293969660?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-          alt: 'Sarah Hansen Image',
+          alt: 'Ügyfél visszajelzés',
         },
       },
       {
-        testimonial: `I discovered these templates and I'm impressed by their variety and quality. They've helped me establish a consistent brand image across my marketing and social platforms, elevating my business's overall appearance.`,
-        name: 'Mark Wilkinson',
-        job: 'Small business owner',
+        testimonial: `A kampányoldalak és a hirdetéskezelés összehangolásával a költéseink sokkal átláthatóbbak lettek. Pontosan látjuk, mi működik, és mire érdemes tovább építeni.`,
+        name: 'Tóth Zoltán',
+        job: 'KKV tulajdonos',
         image: {
           src: 'https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=824&q=80',
-          alt: 'Mark Wilkinson Image',
+          alt: 'Ügyfél visszajelzés',
         },
       },
     ]}
     callToAction={{
-      target: '_blank',
-      text: 'More testimonials...',
-      href: 'https://github.com/arthelokyo/astrowind',
+      text: 'További visszajelzések',
+      href: '/about#visszajelzesek',
       icon: 'tabler:chevron-right',
     }}
   />
-
-  <!-- CallToAction Widget *********** -->
 
   <CallToAction
     actions={[
       {
         variant: 'primary',
-        text: 'Start exploring',
-        href: '/',
+        text: 'Kérj ajánlatot',
+        href: '/contact',
       },
     ]}
-    title="Dive into our template collection"
-    subtitle="Whether you're in business, design, or education, our templates are here to elevate your projects."
+    title="Lépjünk a következő szintre a digitális működésben"
+    subtitle="Mondd el az üzleti céljaidat, és összeállítunk egy hozzád illő, skálázható webes megoldást."
   />
 </Layout>

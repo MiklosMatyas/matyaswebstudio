@@ -3,17 +3,17 @@ import firstImpressionImage from '~/assets/images/weboldal-elso-benyomas.webp';
 import webDesignImage from '~/assets/images/weboldal-tervezes.webp';
 import defaultImage from '~/assets/images/default.png';
 
-export const portfolioHero = {
-  title: 'Portfólió',
+export const referenciakHero = {
+  title: 'Referenciák',
   subtitle:
     'Válogatott munkáinkon keresztül mutatjuk meg, hogyan építünk gyors, átlátható és üzletileg hasznos webes megoldásokat.',
   image: {
     src: heroImage,
-    alt: 'Portfólió bemutató',
+    alt: 'Referenciák bemutató',
   },
 };
 
-export const portfolioItems = [
+export const referenciakItems = [
   {
     title: 'Touch-type Read and Spell (TTRS)',
     subtitle: 'Komplex értékesítési és tanulástámogató weboldal fejlesztése egy angliai székhelyű vállalatnak.',

@@ -18,6 +18,8 @@ const {
   columns,
   itemGridClasses = {},
   image = await Astro.slots.render('image'),
+  contentAreaClass = '',
+  imageAreaClass = '',
   isReversed = false,
   isAfterContent = false,
 
@@ -48,7 +50,7 @@ const hasImage = typeof image === 'string' ? image.trim().length > 0 : Boolean(i
   />
   <div class="mx-auto max-w-7xl p-4 md:px-8">
     <div class={`${hasImage ? `md:flex ${isReversed ? 'md:flex-row-reverse' : ''} md:gap-16` : ''}`}>
-      <div class={`${hasImage ? 'md:basis-1/2' : 'md:basis-full'} self-center`}>
+      <div class={`${hasImage ? `md:basis-1/2 ${contentAreaClass}` : 'md:basis-full'} self-center`}>
         {content && <div class={`mb-12 text-lg dark:text-slate-400 ${contentClass}`.trim()} set:html={content} />}
 
         {
@@ -78,7 +80,7 @@ const hasImage = typeof image === 'string' ? image.trim().length > 0 : Boolean(i
       </div>
       {
         hasImage && (
-          <div aria-hidden="true" class="mt-10 md:mt-0 md:basis-1/2">
+          <div aria-hidden="true" class={`mt-10 md:mt-0 md:basis-1/2 ${imageAreaClass}`.trim()}>
             <div class="relative m-auto max-w-4xl">
               {typeof image === 'string' ? (
                 <Fragment set:html={image} />

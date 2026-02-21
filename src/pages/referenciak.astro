@@ -6,20 +6,20 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import Image from '~/components/common/Image.astro';
 import { Icon } from 'astro-icon/components';
 
-import { portfolioHero, portfolioItems } from '~/data/portfolio';
+import { referenciakHero, referenciakItems } from '~/data/referenciak';
 
 const metadata = {
-  title: 'Portfólió',
+  title: 'Referenciák',
 };
 
 const heroBackground =
-  typeof portfolioHero.image.src === 'string' ? portfolioHero.image.src : portfolioHero.image.src.src;
+  typeof referenciakHero.image.src === 'string' ? referenciakHero.image.src : referenciakHero.image.src.src;
 ---
 
 <Layout metadata={metadata}>
   <Hero
-    title={portfolioHero.title}
-    subtitle={portfolioHero.subtitle}
+    title={referenciakHero.title}
+    subtitle={referenciakHero.subtitle}
     actions={[{ variant: 'primary', text: 'Kapcsolatfelvétel', href: '/contact' }]}
   >
     <Fragment slot="bg">
@@ -32,7 +32,7 @@ const heroBackground =
   </Hero>
 
   {
-    portfolioItems.map((item, index) => (
+    referenciakItems.map((item, index) => (
       <Content
         isReversed={index % 2 === 1}
         isAfterContent={index > 0}

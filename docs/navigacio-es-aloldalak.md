@@ -20,7 +20,7 @@ Ez a dokumentum a projekt jelenlegi fejléc navigációját és az elérhető al
 
 - `/#features` (anchor link)
 - `/services`
-- `/portfolio`
+- `/referenciak`
 - `/pricing`
 - `/about`
 - `/contact`
@@ -78,7 +78,7 @@ Ez a dokumentum a projekt jelenlegi fejléc navigációját és az elérhető al
 - `/contact` (`src/pages/contact.astro`)
 - `/services` (`src/pages/services.astro`)
 - `/pricing` (`src/pages/pricing.astro`)
-- `/portfolio` (`src/pages/portfolio.astro`)
+- `/referenciak` (`src/pages/referenciak.astro`)
 - `/terms` (`src/pages/terms.md`)
 - `/privacy` (`src/pages/privacy.md`)
 - `/404` (`src/pages/404.astro`)
