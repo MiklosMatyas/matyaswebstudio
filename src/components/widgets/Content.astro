@@ -11,9 +11,12 @@ const {
   subtitle = await Astro.slots.render('subtitle'),
   tagline,
   content = await Astro.slots.render('content'),
+  contentClass = '',
+  afterItems = await Astro.slots.render('afterItems'),
   callToAction,
   items = [],
   columns,
+  itemGridClasses = {},
   image = await Astro.slots.render('image'),
   isReversed = false,
   isAfterContent = false,
@@ -46,7 +49,7 @@ const hasImage = typeof image === 'string' ? image.trim().length > 0 : Boolean(i
   <div class="mx-auto max-w-7xl p-4 md:px-8">
     <div class={`${hasImage ? `md:flex ${isReversed ? 'md:flex-row-reverse' : ''} md:gap-16` : ''}`}>
       <div class={`${hasImage ? 'md:basis-1/2' : 'md:basis-full'} self-center`}>
-        {content && <div class="mb-12 text-lg dark:text-slate-400" set:html={content} />}
+        {content && <div class={`mb-12 text-lg dark:text-slate-400 ${contentClass}`.trim()} set:html={content} />}
 
         {
           callToAction && (
@@ -61,14 +64,17 @@ const hasImage = typeof image === 'string' ? image.trim().length > 0 : Boolean(i
           columns={columns}
           defaultIcon="tabler:check"
           classes={{
-            container: `gap-y-4 md:gap-y-8`,
-            panel: 'max-w-none',
-            title: 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
-            description: 'text-muted dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2',
-            icon: 'flex h-7 w-7 items-center justify-center rounded-full bg-green-600 dark:bg-green-700 text-gray-50 p-1',
-            action: 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
+            container: itemGridClasses?.container ?? `gap-y-4 md:gap-y-8`,
+            panel: itemGridClasses?.panel ?? 'max-w-none',
+            title: itemGridClasses?.title ?? 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
+            description: itemGridClasses?.description ?? 'text-muted dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2',
+            icon:
+              itemGridClasses?.icon ??
+              'flex h-7 w-7 items-center justify-center rounded-full bg-green-600 dark:bg-green-700 text-gray-50 p-1',
+            action: itemGridClasses?.action ?? 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
           }}
         />
+        {afterItems && <div class="mt-4" set:html={afterItems} />}
       </div>
       {
         hasImage && (
