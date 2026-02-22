@@ -38,6 +38,33 @@ const { language, textDirection } = I18N;
 
     <!-- Comment the line below to disable View Transitions -->
     <ClientRouter fallback="swap" />
+    <script is:inline>
+      document.addEventListener(
+        'click',
+        (event) => {
+          if (event.defaultPrevented || event.button !== 0) return;
+          if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+          const anchor = event.target instanceof Element ? event.target.closest('a[href]') : null;
+          if (!anchor) return;
+          if (anchor.hasAttribute('download')) return;
+          if (anchor.target && anchor.target !== '_self') return;
+
+          const href = anchor.getAttribute('href');
+          if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+
+          const url = new URL(anchor.href, window.location.href);
+          if (url.origin !== window.location.origin) return;
+
+          const normalizedPath = url.pathname.replace(/\/+$/, '') || '/';
+          if (normalizedPath !== '/contact') return;
+
+          event.preventDefault();
+          window.location.href = url.href;
+        },
+        true
+      );
+    </script>
   </head>
 
   <body class="antialiased text-default bg-page tracking-tight">

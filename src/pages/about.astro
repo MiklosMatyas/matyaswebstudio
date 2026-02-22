@@ -3,6 +3,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import type { ImageMetadata } from 'astro';
 import { Icon } from 'astro-icon/components';
 
 import aboutHeroBg from '~/assets/images/weboldal-keszites-hero.webp';
@@ -12,7 +13,7 @@ const metadata = {
   title: 'Rólunk',
 };
 
-const testimonialImageModules = import.meta.glob('~/assets/images/testimonials/*.{webp,jpg,jpeg,png,svg}', {
+const testimonialImageModules = import.meta.glob<ImageMetadata>('~/assets/images/testimonials/*.{webp,jpg,jpeg,png,svg}', {
   eager: true,
   import: 'default',
 });
@@ -92,7 +93,7 @@ const testimonialImages = Object.values(testimonialImageModules);
           testimonialImages.map((image, index) => (
             <figure class="rounded-xl overflow-hidden border border-slate-200/70 dark:border-slate-700/70 bg-slate-50 dark:bg-slate-900">
               <img
-                src={typeof image === 'string' ? image : image.src}
+                src={image.src}
                 alt={`Ügyfél visszajelzés ${index + 1}`}
                 class="w-full h-full object-cover"
                 loading="lazy"

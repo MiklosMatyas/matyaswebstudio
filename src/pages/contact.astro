@@ -1,7 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
-import ContactUs from '~/components/widgets/Contact.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
@@ -12,32 +11,14 @@ const metadata = {
 <Layout metadata={metadata}>
   <HeroText tagline="Kapcsolat" title="Beszéljünk a projektedről" />
 
-  <ContactUs
-    id="form"
-    title="Írj nekünk üzenetet"
-    subtitle="Röviden írd le a céljaidat, és segítünk megtalálni a legjobb webes megoldást a vállalkozásod számára."
-    inputs={[
-      {
-        type: 'text',
-        name: 'name',
-        label: 'Név',
-      },
-      {
-        type: 'email',
-        name: 'email',
-        label: 'E-mail',
-      },
-    ]}
-    textarea={{
-      label: 'Üzenet',
-    }}
-    disclaimer={{
-      label:
-        'Az űrlap elküldésével elfogadod, hogy a megadott adataidat kapcsolatfelvétel céljából kezeljük.',
-    }}
-    button="Üzenet küldése"
-    description="A beérkező üzenetekre jellemzően 1 munkanapon belül válaszolunk."
-  />
+  <section id="form" class="relative not-prose scroll-mt-[72px]">
+    <div class="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+      <div class="mx-auto mt-8 max-w-2xl text-left">
+        <script src="https://js-eu1.hsforms.net/forms/embed/147796801.js" defer></script>
+        <div class="hs-form-frame" data-region="eu1" data-form-id="d67206e9-e3fd-4ba9-8eca-da1543477b49" data-portal-id="147796801"></div>
+      </div>
+    </div>
+  </section>
 
   <Features2
     title="Miben tudunk segíteni?"

@@ -35,6 +35,7 @@ export const footerData = {
     },
   ],
   secondaryLinks: [],
+  socialLinks: [],
   // socialLinks: [
   //   { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
   //   { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
