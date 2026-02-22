@@ -61,7 +61,7 @@ export const referenciakItems = [
       { title: 'Kapcsolatfelvételi űrlap' },
     ],
     image: {
-      src: defaultImage,
+      src: '~/assets/images/websites/website-abasar.webp',
       alt: 'Ipari területet bemutató weboldal fejlesztése',
     },
     url: 'http://abasar-industrial.com',
@@ -78,7 +78,7 @@ export const referenciakItems = [
       { title: 'Valós időben működő adatbázis integráció' },
     ],
     image: {
-      src: defaultImage,
+      src: '~/assets/images/websites/website-medicalhistory.webp',
       alt: 'Külső szolgáltatások API-integrációja',
     },
     url: 'https://medicalhistorymuseum.mdhs.unimelb.edu.au/collections',
@@ -95,8 +95,8 @@ export const referenciakItems = [
       { title: 'Adományozási lehetőségek megjelenítése' },
     ],
     image: {
-      src: defaultImage,
-      alt: '',
+      src: '~/assets/images/websites/website-DARF.webp',
+      alt: 'alapítvány weboldalának fejlesztése',
     },
     url: 'https://www.dementia.org.au/dementia-australia-research-foundation',
   },
@@ -112,8 +112,8 @@ export const referenciakItems = [
       { title: 'Adományozási lehetőségek megjelenítése' },
     ],
     image: {
-      src: defaultImage,
-      alt: '',
+      src: '~/assets/images/websites/website-cumberland.webp',
+      alt: 'utatási alapítvány weboldalának fejlesztése',
     },
     url: 'https://cumberlandpediatric.org',
   },
@@ -129,7 +129,7 @@ export const referenciakItems = [
       { title: 'Árlisták rendszeres frissítése' },
     ],
     image: {
-      src: defaultImage,
+      src: '~/assets/images/websites/website-mabtarnoca.webp',
       alt: 'bányászati és építőipari céges weboldal készítése',
     },
     url: 'https://mab-tarnoca.hu',
@@ -145,7 +145,7 @@ export const referenciakItems = [
       { title: 'Többnyelvű weboldal kialakítása' },
     ],
     image: {
-      src: defaultImage,
+      src: '~/assets/images/websites/website-mabpharma.webp',
       alt: 'Vállalati céges weboldal',
     },
     url: 'https://www.mab-pharma.hu/',
@@ -162,7 +162,7 @@ export const referenciakItems = [
       { title: 'Könnyen kezelhető adminisztrációs felület kialakítása' },
     ],
     image: {
-      src: defaultImage,
+      src: '~/assets/images/websites/website-csibetanya.webp',
       alt: 'Családi gazdaság bemutató weboldal',
     },
     url: 'https://csibetanya.hu',
@@ -179,7 +179,7 @@ export const referenciakItems = [
       { title: 'Facebook oldal kialakítása, posztok írása rendszeresen' },
     ],
     image: {
-      src: defaultImage,
+      src: '~/assets/images/websites/website-happyflex.webp',
       alt: 'Kozmetikai gyártó cég webáruházának fejlesztése',
     },
     url: 'https://happyflex.hu',
