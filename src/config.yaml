@@ -11,7 +11,7 @@ metadata:
   title:
     default: Matyas Web Studio
     template: '%s — Matyas Web Studio'
-  description: "Professzionális weboldal készítés vállalkozásoknak: gyors, mobilbarát és SEO-optimalizált céges weboldalak tervezése és fejlesztése, amelyek több érdeklődőt és ajánlatkérést hoznak."
+  description: 'Professzionális weboldal készítés vállalkozásoknak: gyors, mobilbarát és SEO-optimalizált céges weboldalak tervezése és fejlesztése, amelyek több érdeklődőt és ajánlatkérést hoznak.'
   robots:
     index: true
     follow: true
