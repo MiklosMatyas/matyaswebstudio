@@ -184,5 +184,4 @@ export const referenciakItems = [
     },
     url: 'https://happyflex.hu',
   },
-
 ];
