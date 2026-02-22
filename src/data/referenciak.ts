@@ -31,7 +31,7 @@ export const referenciakItems = [
     url: 'https://www.readandspell.com',
   },
   {
-    title: 'Benley Labor Kft.',
+    title: 'Bentley Labor Kft.',
     subtitle: 'Komplett online megjelenés és közösségi média kezelése nemzetközi labortechikai forgalmazó cégnek.',
     description:
       'Több Wordpress alapú weboldal kialakítása volt a cél termékkatalógusokkal a fókuszban. A projekt során a tartalmi struktúrát úgy alakítottuk ki, hogy az egyszerűen bővíthető legyen, és a termékek könnyen megtalálhatók legyenek.',
@@ -44,7 +44,7 @@ export const referenciakItems = [
     ],
     image: {
       src: '~/assets/images/websites/website-bentley.webp',
-      alt: 'Landing oldal tervezés',
+      alt: 'Tartalomfejlesztés Facebook, LinkedIn és Youtube',
     },
     url: 'https://bentleylab.hu',
   },
