@@ -13,10 +13,13 @@ const metadata = {
   title: 'Rólunk',
 };
 
-const testimonialImageModules = import.meta.glob<ImageMetadata>('~/assets/images/testimonials/*.{webp,jpg,jpeg,png,svg}', {
-  eager: true,
-  import: 'default',
-});
+const testimonialImageModules = import.meta.glob<ImageMetadata>(
+  '~/assets/images/testimonials/*.{webp,jpg,jpeg,png,svg}',
+  {
+    eager: true,
+    import: 'default',
+  }
+);
 
 const testimonialImages = Object.values(testimonialImageModules);
 ---
@@ -32,7 +35,8 @@ const testimonialImages = Object.values(testimonialImageModules);
       <div
         class="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={`background-image: url('${aboutHeroBg.src}');`}
-      ></div>
+      >
+      </div>
       <div class="absolute inset-0 bg-white/35 dark:bg-slate-900/35"></div>
     </Fragment>
   </Hero>
@@ -46,28 +50,36 @@ const testimonialImages = Object.values(testimonialImageModules);
   >
     <Fragment slot="content">
       <p class="mb-4">
-        Több mint másfél évtizede foglalkozom webes megoldásokkal – az utam programozóként indult, majd 2005-től webfejlesztőként kezdtem dolgozni. Dolgoztam cégeknél és ügynökségeknél, többek között Írországban is, ahol értékes nemzetközi tapasztalatokat szereztem. Az évek során bejártam az informatika számos területét: fejlesztettem frontendet és backendet, dolgoztam PHP-vel, JavaScripttel, adatbázisokkal, és mélyen megismertem olyan rendszereket, mint a Drupal és a WordPress.
+        Több mint másfél évtizede foglalkozom webes megoldásokkal – az utam programozóként indult, majd 2005-től
+        webfejlesztőként kezdtem dolgozni. Dolgoztam cégeknél és ügynökségeknél, többek között Írországban is, ahol
+        értékes nemzetközi tapasztalatokat szereztem. Az évek során bejártam az informatika számos területét:
+        fejlesztettem frontendet és backendet, dolgoztam PHP-vel, JavaScripttel, adatbázisokkal, és mélyen megismertem
+        olyan rendszereket, mint a Drupal és a WordPress.
       </p>
       <p class="mb-4">
-        Szabadúszóként elsősorban külföldi megrendelők számára dolgoztam, különösen az Egyesült Államokból, Angliából és Ausztráliából. Ezekben az együttműködésekben nemcsak fejlesztőként vettem részt, hanem közvetlenül is kapcsolatban álltam az ügyfelekkel. Ennek köszönhetően egyre jobban beleláttam a különböző vállalkozások működésébe, napi problémáikba és növekedési kihívásaikba.
+        Szabadúszóként elsősorban külföldi megrendelők számára dolgoztam, különösen az Egyesült Államokból, Angliából és
+        Ausztráliából. Ezekben az együttműködésekben nemcsak fejlesztőként vettem részt, hanem közvetlenül is
+        kapcsolatban álltam az ügyfelekkel. Ennek köszönhetően egyre jobban beleláttam a különböző vállalkozások
+        működésébe, napi problémáikba és növekedési kihívásaikba.
       </p>
       <p class="mb-4">
-        A technikai tudás mellett így természetes módon kezdtem el foglalkozni az online marketing világával is – megtanultam, hogyan lehet a fejlesztést és az automatizációt stratégiai eszközként használni ügyfélszerzésre, értékesítésre és márkaépítésre.
+        A technikai tudás mellett így természetes módon kezdtem el foglalkozni az online marketing világával is –
+        megtanultam, hogyan lehet a fejlesztést és az automatizációt stratégiai eszközként használni ügyfélszerzésre,
+        értékesítésre és márkaépítésre.
       </p>
       <p>
-        Ma már nemcsak webfejlesztőként tekintek magamra, hanem olyan partnerként, aki a technológiai tudást és az üzleti szemléletet ötvözve segít a vállalkozásoknak hatékonyabbá válni, automatizálni, és valódi növekedési pályára állni.
+        Ma már nemcsak webfejlesztőként tekintek magamra, hanem olyan partnerként, aki a technológiai tudást és az
+        üzleti szemléletet ötvözve segít a vállalkozásoknak hatékonyabbá válni, automatizálni, és valódi növekedési
+        pályára állni.
       </p>
     </Fragment>
 
     <Fragment slot="image">
       <figure class="w-full max-w-[500px] ml-auto">
-        <img
-          src={aboutImage.src}
-          alt="Matyás Miklós webfejlesztő"
-          class="w-full rounded-lg shadow-lg"
-          loading="lazy"
-        />
-        <figcaption class="mt-2 text-sm text-muted dark:text-slate-400 text-center">Matyás Miklós / alapító - webfejlesztő</figcaption>
+        <img src={aboutImage.src} alt="Matyás Miklós webfejlesztő" class="w-full rounded-lg shadow-lg" loading="lazy" />
+        <figcaption class="mt-2 text-sm text-muted dark:text-slate-400 text-center">
+          Matyás Miklós / alapító - webfejlesztő
+        </figcaption>
       </figure>
     </Fragment>
   </Content>

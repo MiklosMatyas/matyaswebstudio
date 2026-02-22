@@ -1,4 +1,4 @@
-nodejs_version: "20"
+nodejs_version: '20'
 omit_containers:
   - db
 web_extra_exposed_ports:

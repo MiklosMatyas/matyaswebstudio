@@ -7,7 +7,6 @@ import webDesignImage from '~/assets/images/weboldal-tervezes.webp';
 import servicesBg from '~/assets/images/online-szolgaltatasok-bg.webp';
 
 import Hero from '~/components/widgets/Hero.astro';
-import Note from '~/components/widgets/Note.astro';
 import Content from '~/components/widgets/Content.astro';
 import Features from '~/components/widgets/Features.astro';
 import Steps from '~/components/widgets/Steps.astro';
@@ -27,10 +26,8 @@ const metadata = {
     ]}
   >
     <Fragment slot="bg">
-      <div
-        class="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={`background-image: url('${heroBg.src}');`}
-      ></div>
+      <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style={`background-image: url('${heroBg.src}');`}>
+      </div>
       <div class="absolute inset-0 bg-white/35 dark:bg-slate-900/35"></div>
     </Fragment>
 
@@ -41,12 +38,11 @@ const metadata = {
 
     <Fragment slot="subtitle">
       Olyan céges weboldalakat tervezünk és fejlesztünk, amelyek gyorsak, mobilbarátak és üzleti célra vannak
-      optimalizálva. A fókusz: több érdeklődő, átlátható kommunikáció, megbízható működés. A kivitelezés során
-      végig figyelünk arra, hogy a weboldal valódi értékesítési és bizalomépítési eszközként működjön a vállalkozásod
+      optimalizálva. A fókusz: több érdeklődő, átlátható kommunikáció, megbízható működés. A kivitelezés során végig
+      figyelünk arra, hogy a weboldal valódi értékesítési és bizalomépítési eszközként működjön a vállalkozásod
       mindennapjaiban.
     </Fragment>
   </Hero>
-
 
   <Content
     id="weboldal-keszites"
@@ -55,9 +51,9 @@ const metadata = {
   >
     <Fragment slot="content">
       <p class="mb-4">
-        Egy vállalkozás weboldala általában az első találkozási pont a leendő ügyfelekkel. Ezért a tervezés során azt vesszük
-        alapul, hogy az érdeklődő gyorsan megértse, mivel foglalkozol, miért bízhat benned, és hogyan tud egyszerűen
-        kapcsolatba lépni veled.
+        Egy vállalkozás weboldala általában az első találkozási pont a leendő ügyfelekkel. Ezért a tervezés során azt
+        vesszük alapul, hogy az érdeklődő gyorsan megértse, mivel foglalkozol, miért bízhat benned, és hogyan tud
+        egyszerűen kapcsolatba lépni veled.
       </p>
       <p class="mb-4">
         A fejlesztési folyamatunk minden része ezt támogatja: tiszta tartalmi hierarchia, jól látható ajánlatkérési
@@ -111,11 +107,13 @@ const metadata = {
       },
       {
         title: 'Konverziófókusz',
-        description: 'A tartalmat és a felhívásokat úgy strukturáljuk, hogy több ajánlatkérés és kapcsolatfelvétel érkezzen.',
+        description:
+          'A tartalmat és a felhívásokat úgy strukturáljuk, hogy több ajánlatkérés és kapcsolatfelvétel érkezzen.',
       },
       {
         title: 'Integrációk és bővíthetőség',
-        description: 'Űrlapok, analitika, CRM vagy külső rendszerek bekötése később is egyszerűen továbbfejleszthető módon.',
+        description:
+          'Űrlapok, analitika, CRM vagy külső rendszerek bekötése később is egyszerűen továbbfejleszthető módon.',
       },
       {
         title: 'Karbantartás és folyamatos támogatás',
@@ -127,7 +125,8 @@ const metadata = {
       <div
         class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
         style={`background-image: url('${sectionThreeBg.src}');`}
-      ></div>
+      >
+      </div>
     </Fragment>
   </Content>
 
@@ -236,7 +235,8 @@ const metadata = {
       <div
         class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
         style={`background-image: url('${servicesBg.src}');`}
-      ></div>
+      >
+      </div>
     </Fragment>
   </Features>
 

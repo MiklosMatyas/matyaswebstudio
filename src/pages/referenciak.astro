@@ -26,7 +26,8 @@ const heroBackground =
       <div
         class="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={`background-image: url('${heroBackground}');`}
-      ></div>
+      >
+      </div>
       <div class="absolute inset-0 bg-white/35 dark:bg-slate-900/35"></div>
     </Fragment>
   </Hero>
@@ -54,22 +55,20 @@ const heroBackground =
           <p>{item.description}</p>
         </Fragment>
         <Fragment slot="afterItems">
-          {
-            item.url && (
-              <p class="text-sm md:text-base">
-                <span class="font-medium text-default dark:text-white">Projekt megtekintése:</span>{' '}
-                <a
-                  href={item.url}
-                  target="_blank"
-                  rel="nofollow noopener noreferrer"
-                  class="inline-flex items-center gap-1 text-primary hover:underline break-all"
-                >
-                  {item.url}
-                  <Icon name="tabler:external-link" class="w-4 h-4 shrink-0" />
-                </a>
-              </p>
-            )
-          }
+          {item.url && (
+            <p class="text-sm md:text-base">
+              <span class="font-medium text-default dark:text-white">Projekt megtekintése:</span>{' '}
+              <a
+                href={item.url}
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+                class="inline-flex items-center gap-1 text-primary hover:underline break-all"
+              >
+                {item.url}
+                <Icon name="tabler:external-link" class="w-4 h-4 shrink-0" />
+              </a>
+            </p>
+          )}
         </Fragment>
         <Fragment slot="image">
           <Image

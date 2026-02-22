@@ -5,6 +5,7 @@ import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Image from '~/components/common/Image.astro';
 import Button from '~/components/ui/Button.astro';
 import ItemGrid from '~/components/ui/ItemGrid.astro';
+import type { ImageProps } from '~/utils/images-optimization';
 
 const {
   title = await Astro.slots.render('title'),
@@ -30,6 +31,7 @@ const {
 } = Astro.props;
 
 const hasImage = typeof image === 'string' ? image.trim().length > 0 : Boolean(image);
+const imageProps = image && typeof image === 'object' ? (image as ImageProps) : undefined;
 ---
 
 <WidgetWrapper
@@ -84,7 +86,7 @@ const hasImage = typeof image === 'string' ? image.trim().length > 0 : Boolean(i
             <div class="relative m-auto max-w-4xl">
               {typeof image === 'string' ? (
                 <Fragment set:html={image} />
-              ) : (
+              ) : imageProps ? (
                 <Image
                   class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg"
                   width={500}
@@ -92,8 +94,10 @@ const hasImage = typeof image === 'string' ? image.trim().length > 0 : Boolean(i
                   widths={[400, 768]}
                   sizes="(max-width: 768px) 100vw, 432px"
                   layout="responsive"
-                  {...image}
+                  {...imageProps}
                 />
+              ) : (
+                <Fragment />
               )}
             </div>
           </div>

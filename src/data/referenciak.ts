@@ -189,14 +189,8 @@ export const referenciakItems = [
   {
     title: '',
     subtitle: '',
-    description:
-      '',
-    items: [
-      { title: '' },
-      { title: '' },
-      { title: '' },
-      { title: 'S' },
-    ],
+    description: '',
+    items: [{ title: '' }, { title: '' }, { title: '' }, { title: 'S' }],
     image: {
       src: defaultImage,
       alt: '',
@@ -206,14 +200,8 @@ export const referenciakItems = [
   {
     title: '',
     subtitle: '',
-    description:
-      '',
-    items: [
-      { title: '' },
-      { title: '' },
-      { title: '' },
-      { title: 'S' },
-    ],
+    description: '',
+    items: [{ title: '' }, { title: '' }, { title: '' }, { title: 'S' }],
     image: {
       src: defaultImage,
       alt: '',
