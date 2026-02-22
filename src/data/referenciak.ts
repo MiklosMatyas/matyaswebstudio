@@ -1,7 +1,5 @@
 import heroImage from '~/assets/images/weboldal-keszites-hero.webp';
-import firstImpressionImage from '~/assets/images/weboldal-elso-benyomas.webp';
-import webDesignImage from '~/assets/images/weboldal-tervezes.webp';
-import defaultImage from '~/assets/images/default.png';
+import defaultImage from '~/assets/images/websites/website-bentley.webp';
 
 export const referenciakHero = {
   title: 'Referenciák',
@@ -27,7 +25,7 @@ export const referenciakItems = [
       { title: 'API kapcsolat külső szolgáltatókkal' },
     ],
     image: {
-      src: firstImpressionImage,
+      src: '~/assets/images/websites/website-ttrs.webp',
       alt: 'Céges weboldal újratervezése',
     },
     url: 'https://www.readandspell.com',
@@ -45,7 +43,7 @@ export const referenciakItems = [
       { title: 'Bemutató videók nyelvi fordítása és feltöltése' },
     ],
     image: {
-      src: webDesignImage,
+      src: '~/assets/images/websites/website-bentley.webp',
       alt: 'Landing oldal tervezés',
     },
     url: 'https://bentleylab.hu',
@@ -186,26 +184,5 @@ export const referenciakItems = [
     },
     url: 'https://happyflex.hu',
   },
-  {
-    title: '',
-    subtitle: '',
-    description: '',
-    items: [{ title: '' }, { title: '' }, { title: '' }, { title: 'S' }],
-    image: {
-      src: defaultImage,
-      alt: '',
-    },
-    url: '',
-  },
-  {
-    title: '',
-    subtitle: '',
-    description: '',
-    items: [{ title: '' }, { title: '' }, { title: '' }, { title: 'S' }],
-    image: {
-      src: defaultImage,
-      alt: '',
-    },
-    url: '',
-  },
+
 ];
