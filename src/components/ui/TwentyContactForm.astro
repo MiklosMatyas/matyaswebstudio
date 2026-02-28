@@ -5,7 +5,9 @@ export interface Props {
 
 const { locale = 'hu' } = Astro.props;
 
-const webhookUrl = import.meta.env.PUBLIC_TWENTY_WEBHOOK_URL || '';
+const webhookUrl =
+  import.meta.env.PUBLIC_TWENTY_WEBHOOK_URL ||
+  'https://twenty.matyaswebstudio.com/webhooks/workflows/22a01db6-3ba1-4ee3-9eb5-d45c12b1d167/bbc7c3be-3fd1-4162-8411-80ca1766b215';
 const formId = `twenty-contact-form-${locale}`;
 const statusId = `twenty-contact-status-${locale}`;
 
