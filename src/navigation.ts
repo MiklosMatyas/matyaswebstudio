@@ -1,49 +1,70 @@
-import { getPermalink } from './utils/permalinks';
+import { getLocalizedNavigationLinks, type SupportedLocale } from './utils/i18n-routing';
 
-export const headerData = {
-  links: [
-    {
-      text: 'Referenciák',
-      href: getPermalink('/referenciak'),
-    },
-    {
-      text: 'Szolgáltatások',
-      href: getPermalink('/services'),
-    },
-    {
-      text: 'Rólunk',
-      href: getPermalink('/about'),
-    },
-    {
-      text: 'Kapcsolat',
-      href: getPermalink('/contact'),
-    },
-  ],
-  actions: [],
-};
+export const getHeaderData = (locale: SupportedLocale) => {
+  const links = getLocalizedNavigationLinks(locale);
 
-export const footerData = {
-  links: [
-    {
-      title: '',
+  if (locale === 'en') {
+    return {
       links: [
-        { text: 'Referenciák', href: getPermalink('/referenciak') },
-        { text: 'Szolgáltatások', href: getPermalink('/services') },
-        { text: 'Rólunk', href: getPermalink('/about') },
-        { text: 'Kapcsolat', href: getPermalink('/contact') },
+        { text: 'Portfolio', href: links.references },
+        { text: 'Services', href: links.services },
+        { text: 'About', href: links.about },
+        { text: 'Contact', href: links.contact },
       ],
-    },
-  ],
-  secondaryLinks: [],
-  socialLinks: [],
-  // socialLinks: [
-  //   { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
-  //   { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
-  //   { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
-  //   { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
-  //   { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/arthelokyo/astrowind' },
-  // ],
-  footNote: `
-    2026 · Minden jog fenntartva.
-  `,
+      actions: [],
+    };
+  }
+
+  return {
+    links: [
+      { text: 'Referenciák', href: links.references },
+      { text: 'Szolgáltatások', href: links.services },
+      { text: 'Rólunk', href: links.about },
+      { text: 'Kapcsolat', href: links.contact },
+    ],
+    actions: [],
+  };
 };
+
+export const getFooterData = (locale: SupportedLocale) => {
+  const links = getLocalizedNavigationLinks(locale);
+
+  if (locale === 'en') {
+    return {
+      links: [
+        {
+          title: '',
+          links: [
+            { text: 'Portfolio', href: links.references },
+            { text: 'Services', href: links.services },
+            { text: 'About', href: links.about },
+            { text: 'Contact', href: links.contact },
+          ],
+        },
+      ],
+      secondaryLinks: [],
+      socialLinks: [],
+      footNote: '2026 · All rights reserved.',
+    };
+  }
+
+  return {
+    links: [
+      {
+        title: '',
+        links: [
+          { text: 'Referenciák', href: links.references },
+          { text: 'Szolgáltatások', href: links.services },
+          { text: 'Rólunk', href: links.about },
+          { text: 'Kapcsolat', href: links.contact },
+        ],
+      },
+    ],
+    secondaryLinks: [],
+    socialLinks: [],
+    footNote: '2026 · Minden jog fenntartva.',
+  };
+};
+
+export const headerData = getHeaderData('hu');
+export const footerData = getFooterData('hu');

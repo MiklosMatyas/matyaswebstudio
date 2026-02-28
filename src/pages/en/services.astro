@@ -1,0 +1,211 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import webDesignImage from '~/assets/images/weboldal-tervezes.webp';
+import heroBg from '~/assets/images/weboldal-keszites-hero.webp';
+import webSystemImage from '~/assets/images/web-system.webp';
+import oskarbImage from '~/assets/images/oskarb.jpeg';
+import paulPImage from '~/assets/images/paulp.jpeg';
+
+const metadata = {
+  title: 'Services',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Web development and online growth support for SMEs"
+    title="Services"
+    subtitle="We deliver an integrated service model where website, marketing, and client management work together for predictable lead flow and better customer experience."
+    actions={[{ variant: 'primary', text: 'Get in touch', href: '/en/contact' }]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style={`background-image: url('${heroBg.src}');`}>
+      </div>
+      <div class="absolute inset-0 bg-white/35 dark:bg-slate-900/35"></div>
+    </Fragment>
+  </Hero>
+
+  <Features2
+    title="Main service areas"
+    subtitle="Daily support across the following domains."
+    columns={3}
+    items={[
+      {
+        title: 'Business website development',
+        description: 'Modern, mobile-friendly, and fast websites designed around business outcomes.',
+        icon: 'tabler:building-store',
+      },
+      {
+        title: 'Website maintenance',
+        description: 'Updates, bug fixes, performance optimisation, and ongoing technical support.',
+        icon: 'tabler:tool',
+      },
+      {
+        title: 'Social media and content',
+        description: 'Platform-specific content production and scheduled communication.',
+        icon: 'tabler:brand-instagram',
+      },
+      {
+        title: 'Paid advertising',
+        description: 'Meta and Google Ads campaign planning, launch, measurement, and optimisation.',
+        icon: 'tabler:speakerphone',
+      },
+      {
+        title: 'Google Business Profile and reviews',
+        description: 'Stronger visibility and trust with profile management and review workflows.',
+        icon: 'tabler:star',
+      },
+      {
+        title: 'CRM system',
+        description: 'Centralised lead, customer, and task management with clear statuses.',
+        icon: 'tabler:users-group',
+      },
+      {
+        title: 'Sales automation',
+        description: 'Email, SMS, and follow-up automation to improve response speed.',
+        icon: 'tabler:route-alt-left',
+      },
+      {
+        title: 'AI assistant',
+        description: 'Trained chatbot support for website and messaging channels, available 24/7.',
+        icon: 'tabler:robot',
+      },
+      {
+        title: 'Analytics and reports',
+        description: 'Actionable reporting for campaigns, page performance, and customer journeys.',
+        icon: 'tabler:chart-bar',
+      },
+    ]}
+  />
+
+  <Content
+    isReversed
+    title="Website delivery: the foundation of all services"
+    items={[
+      {
+        title: 'Structure based on business goals',
+        description: 'Site architecture is shaped around audience intent and your sales process.',
+        icon: 'tabler:target-arrow',
+      },
+      {
+        title: 'Fast, responsive performance',
+        description: 'Stable and smooth user experience on both mobile and desktop.',
+        icon: 'tabler:device-mobile',
+      },
+      {
+        title: 'Technical SEO baseline',
+        description: 'Search-friendly setup, clean code structure, and proper on-page configuration.',
+        icon: 'tabler:search',
+      },
+      {
+        title: 'Scalability for later growth',
+        description: 'New pages, features, and integrations can be added without rework.',
+        icon: 'tabler:plug-connected',
+      },
+    ]}
+    image={{
+      src: webDesignImage,
+      alt: 'Website development',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">What this means in practice</h3>
+      Your website is the core of your digital operation. We align content logic, design, and technical implementation so
+      visitors can orient quickly and contact you with minimal friction.
+    </Fragment>
+  </Content>
+
+  <Content
+    isAfterContent
+    title="Why this matters for SMEs"
+    items={[
+      {
+        title: 'More predictable client handling',
+        description: 'Web enquiries, forms, and communication points flow into a clear process.',
+        icon: 'tabler:timeline',
+      },
+      {
+        title: 'Stronger trust signals',
+        description: 'Professional design and consistent messaging support faster decisions.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'Better measurability',
+        description: 'Analytics reveal which channels and pages produce real outcomes.',
+        icon: 'tabler:gauge',
+      },
+      {
+        title: 'Continuous improvement',
+        description: 'Regular optimisation and automation increase long-term efficiency.',
+        icon: 'tabler:trending-up',
+      },
+    ]}
+    image={{
+      src: webSystemImage,
+      alt: 'SME collaboration',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Not isolated services, but a system
+      </h3>
+      We build an operating model where website, campaigns, CRM, and follow-up all support the same objective: more relevant
+      leads and better client service.
+    </Fragment>
+  </Content>
+
+  <Testimonials
+    title="Client feedback"
+    testimonials={[
+      {
+        testimonial: `Miklos is an exceptionally talented developer and very easy to work with. He communicates clearly, asks the right questions, and solves problems quickly. Thank you!`,
+        name: 'Oskar B',
+        job: 'Norway',
+        image: {
+          src: oskarbImage,
+          alt: 'Client testimonial',
+        },
+      },
+      {
+        testimonial: `I needed help on a project and Miklos jumped in and moved it forward significantly. Highly recommended.`,
+        name: 'Paul Pinkman',
+        job: 'United States',
+        image: {
+          src: paulPImage,
+          alt: 'Client testimonial',
+        },
+      },
+      {
+        testimonial: `Miklos was excellent. We handed him an old Drupal site and he upgraded it smoothly and migrated it to new servers without issues. Very efficient and easy to collaborate with.`,
+        name: 'Oliver Ryan',
+        job: 'United States',
+        image: {
+          src: 'https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=824&q=80',
+          alt: 'Client testimonial',
+        },
+      },
+    ]}
+    callToAction={{
+      text: 'More reviews',
+      href: '/en/about#reviews',
+      icon: 'tabler:chevron-right',
+    }}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Request a quote',
+        href: '/en/contact',
+      },
+    ]}
+    title="Take your digital operation to the next level"
+    subtitle="Share your goals and we will propose a scalable web solution tailored to your business."
+  />
+</Layout>

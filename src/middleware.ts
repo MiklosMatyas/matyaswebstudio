@@ -1,6 +1,7 @@
 import { defineMiddleware } from 'astro/middleware';
 
 const allowedPages = new Set(['/', '/referenciak', '/services', '/about', '/contact', '/404']);
+const allowedPrefixes = ['/hu', '/en'];
 
 const hasStaticFileExtension = (pathname: string) =>
   /\.[a-zA-Z0-9]+$/.test(pathname) ||
@@ -16,7 +17,11 @@ const normalizePath = (pathname: string) => {
 export const onRequest = defineMiddleware((context, next) => {
   const pathname = normalizePath(context.url.pathname);
 
-  if (allowedPages.has(pathname) || hasStaticFileExtension(pathname)) {
+  if (
+    allowedPages.has(pathname) ||
+    allowedPrefixes.some((prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`)) ||
+    hasStaticFileExtension(pathname)
+  ) {
     return next();
   }
 

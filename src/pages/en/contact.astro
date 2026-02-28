@@ -1,0 +1,46 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Contact',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText tagline="Contact" title="Let’s talk about your project" />
+
+  <section id="form" class="relative not-prose scroll-mt-[72px]">
+    <div class="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+      <div class="mx-auto mt-8 max-w-2xl text-left">
+        <script is:inline src="https://js-eu1.hsforms.net/forms/embed/147796801.js" defer></script>
+        <div
+          class="hs-form-frame"
+          data-region="eu1"
+          data-form-id="d67206e9-e3fd-4ba9-8eca-da1543477b49"
+          data-portal-id="147796801"
+        >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Features2
+    title="How we can help"
+    items={[
+      {
+        title: 'General questions',
+        description: `We help you choose the right service mix and clarify what fits your business goals best.`,
+      },
+      {
+        title: 'Project quote',
+        description: 'Request a tailored quote for website development, maintenance, CRM, or automation.',
+      },
+      {
+        title: 'Technical consultation',
+        description: 'We can support system extensions, bug fixing, and integration planning for existing platforms.',
+      },
+    ]}
+  />
+</Layout>

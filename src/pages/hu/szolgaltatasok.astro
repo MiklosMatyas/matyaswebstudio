@@ -1,0 +1,213 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import webDesignImage from '~/assets/images/weboldal-tervezes.webp';
+import heroBg from '~/assets/images/weboldal-keszites-hero.webp';
+import webSystemImage from '~/assets/images/web-system.webp';
+import oskarbImage from '~/assets/images/oskarb.jpeg';
+import paulPImage from '~/assets/images/paulp.jpeg';
+
+const metadata = {
+  title: 'Szolgáltatások',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Webfejlesztés és online növekedési támogatás Kis- és középvállalkozásoknak"
+    title="Szolgáltatások"
+    subtitle="Olyan szolgáltatási rendszert adunk, amelyben a weboldal, a marketing és az ügyfélkezelés együtt dolgozik. A cél a stabil online jelenlét, a jobb ügyfélélmény és a kiszámíthatóbb érdeklődői folyamat."
+    actions={[{ variant: 'primary', text: 'Kapcsolatfelvétel', href: '/hu/kapcsolat' }]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style={`background-image: url('${heroBg.src}');`}>
+      </div>
+      <div class="absolute inset-0 bg-white/35 dark:bg-slate-900/35"></div>
+    </Fragment>
+  </Hero>
+
+  <Features2
+    title="Fő szolgáltatási területek"
+    subtitle="Az alábbi területeken segítünk napi szinten vállalkozásoknak."
+    columns={3}
+    items={[
+      {
+        title: 'Céges weboldal készítés',
+        description: 'Modern, mobilbarát és gyors weboldalak fejlesztése, amelyek üzleti célokat támogatnak.',
+        icon: 'tabler:building-store',
+      },
+      {
+        title: 'Weboldal karbantartás',
+        description: 'Frissítések, hibajavítás, teljesítményoptimalizálás és folyamatos technikai támogatás.',
+        icon: 'tabler:tool',
+      },
+      {
+        title: 'Social media és tartalom',
+        description: `Platformokra szabott tartalomkészítés és ütemezett kommunikáció egységes arculati iránnyal.`,
+        icon: 'tabler:brand-instagram',
+      },
+      {
+        title: 'Hirdetéskezelés',
+        description: 'Meta és Google Ads kampányok tervezése, indítása, mérése és folyamatos optimalizálása.',
+        icon: 'tabler:speakerphone',
+      },
+      {
+        title: 'Google cégprofil és értékelések',
+        description: 'A láthatóság és bizalom erősítése friss cégprofilkezeléssel és értékelésgyűjtési folyamatokkal.',
+        icon: 'tabler:star',
+      },
+      {
+        title: 'CRM rendszer',
+        description: 'Érdeklődők, ügyfelek és feladatok egy központi rendszerben, átlátható státuszokkal.',
+        icon: 'tabler:users-group',
+      },
+      {
+        title: 'Értékesítési automatizálás',
+        description: 'Email, SMS és utánkövetési folyamatok automatizálása a gyorsabb kiszolgálásért.',
+        icon: 'tabler:route-alt-left',
+      },
+      {
+        title: 'AI asszisztens',
+        description: `Betanított chatbot weboldalra és üzenetküldő csatornákra, 0-24 válaszadással.`,
+        icon: 'tabler:robot',
+      },
+      {
+        title: 'Analitika és riportok',
+        description: 'Valós adatokra épülő riportok a kampányok, oldalteljesítmény és ügyfélfolyamatok fejlesztéséhez.',
+        icon: 'tabler:chart-bar',
+      },
+    ]}
+  />
+
+  <Content
+    isReversed
+    title="Weboldal fejlesztés: a szolgáltatásaink alapja"
+    items={[
+      {
+        title: 'Üzleti célokra tervezett struktúra',
+        description: 'Az oldalfelépítést a célközönség és az értékesítési folyamat alapján alakítjuk ki.',
+        icon: 'tabler:target-arrow',
+      },
+      {
+        title: 'Gyors és reszponzív működés',
+        description:
+          'Mobilon és asztali környezetben is stabil, gyors felhasználói élményt biztosító megoldásokat készítünk.',
+        icon: 'tabler:device-mobile',
+      },
+      {
+        title: 'Technikai SEO alapok',
+        description: 'Keresőbarát technikai háttér, tiszta kódszerkezet és megfelelő oldalszintű beállítások.',
+        icon: 'tabler:search',
+      },
+      {
+        title: 'Későbbi bővíthetőség',
+        description:
+          'A fejlesztés úgy készül, hogy új aloldalak, új funkciók és integrációk egyszerűen hozzáadhatók legyenek.',
+        icon: 'tabler:plug-connected',
+      },
+    ]}
+    image={{
+      src: webDesignImage,
+      alt: 'Weboldal fejlesztés',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Mit jelent ez a gyakorlatban?</h3>
+      A weboldal az online működés központi eleme. Ezért a tartalmi logika, a design és a technikai felépítés is összehangoltan
+      készül, hogy a látogató gyorsan eligazodjon és könnyen kapcsolatba léphessen veled.
+    </Fragment>
+  </Content>
+
+  <Content
+    isAfterContent
+    title="Miért hasznos ez a KKV szektorban?"
+    items={[
+      {
+        title: 'Kiszámíthatóbb ügyfélkezelés',
+        description: 'A webes érdeklődések, űrlapok és kommunikációs pontok átlátható rendszerbe kerülnek.',
+        icon: 'tabler:timeline',
+      },
+      {
+        title: 'Erősebb bizalomépítés',
+        description:
+          'A professzionális megjelenés és a konzisztens kommunikáció segíti a döntést az érdeklődők oldalán.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'Jobb mérhetőség',
+        description:
+          'Analitikai adatok alapján pontosabban látható, mely csatornák és mely oldalak hoznak valódi eredményt.',
+        icon: 'tabler:gauge',
+      },
+      {
+        title: 'Folyamatos fejlődési lehetőség',
+        description: 'A rendszeres finomhangolás és automatizálás hosszú távon is növeli a hatékonyságot.',
+        icon: 'tabler:trending-up',
+      },
+    ]}
+    image={{
+      src: webSystemImage,
+      alt: 'KKV együttműködés',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Szolgáltatás helyett rendszer</h3>
+      A cél egy olyan működés kialakítása, ahol a weboldal, a kampányok, a CRM és az utánkövetés ugyanazt az üzleti célt támogatják:
+      több releváns érdeklődőt és hatékonyabb ügyfélkiszolgálást.
+    </Fragment>
+  </Content>
+
+  <Testimonials
+    title="Ügyfélvisszajelzések"
+    testimonials={[
+      {
+        testimonial: `Miklós egy nagyon tehetséges fejlesztő, akivel remekül lehet együtt dolgozni. Világosan kommunikál, kedves hangnemű, és kérdéseket tesz fel, hogy megoldja a problémákat. Köszönöm!`,
+        name: 'Oskar B',
+        job: 'Norvégia',
+        image: {
+          src: oskarbImage,
+          alt: 'Ügyfél visszajelzés',
+        },
+      },
+      {
+        testimonial: `Segítségre volt szükségem egy projekthez, és Miklos beugrott, és nagyot lendített a dolgon. Nagyon ajánlom őt.`,
+        name: 'Paul Pinkman',
+        job: 'Egyesült Államok',
+        image: {
+          src: paulPImage,
+          alt: 'Ügyfél visszajelzés',
+        },
+      },
+      {
+        testimonial: `Miklós nagyszerű volt. Adtunk neki egy régi Drupal-oldalt, és ő gond nélkül frissítette, és új szerverekre költöztette. Nagyon hatékony, és könnyű vele együtt dolgozni!`,
+        name: 'Oliver Ryan',
+        job: 'Egyesült Államok',
+        image: {
+          src: 'https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=824&q=80',
+          alt: 'Ügyfél visszajelzés',
+        },
+      },
+    ]}
+    callToAction={{
+      text: 'További visszajelzések',
+      href: '/hu/rolunk#visszajelzesek',
+      icon: 'tabler:chevron-right',
+    }}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Kérj ajánlatot',
+        href: '/hu/kapcsolat',
+      },
+    ]}
+    title="Lépjünk a következő szintre a digitális működésben"
+    subtitle="Mondd el az üzleti céljaidat, és összeállítunk egy hozzád illő, skálázható webes megoldást."
+  />
+</Layout>

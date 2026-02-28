@@ -1,0 +1,274 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import heroBg from '~/assets/images/weboldal-keszites-hero.webp';
+import sectionThreeBg from '~/assets/images/ceges-weboldal-keszites-bg.webp';
+import firstImpressionImage from '~/assets/images/weboldal-elso-benyomas.webp';
+import webDesignImage from '~/assets/images/weboldal-tervezes.webp';
+import servicesBg from '~/assets/images/online-szolgaltatasok-bg.webp';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Matyas Web Studio',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    actions={[
+      { variant: 'primary', text: 'Ajánlatot kérek', href: '/hu/kapcsolat' },
+      { text: 'Weboldal készítés', href: '/hu/kapcsolat' },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style={`background-image: url('${heroBg.src}');`}>
+      </div>
+      <div class="absolute inset-0 bg-white/35 dark:bg-slate-900/35"></div>
+    </Fragment>
+
+    <Fragment slot="title">
+      Weboldal készítés
+      <span class="text-accent dark:text-white"> vállalkozások számára</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Olyan céges weboldalakat tervezünk és fejlesztünk, amelyek gyorsak, mobilbarátak és üzleti célra vannak
+      optimalizálva. A fókusz: több érdeklődő, átlátható kommunikáció, megbízható működés. A kivitelezés során végig
+      figyelünk arra, hogy a weboldal valódi értékesítési és bizalomépítési eszközként működjön a vállalkozásod
+      mindennapjaiban.
+    </Fragment>
+  </Hero>
+
+  <Content
+    id="weboldal-keszites"
+    title="Mit kapsz nálunk weboldal készítésnél?"
+    subtitle="A teljes folyamatot lefedjük az üzleti célok felmérésétől az éles indulásig és a további fejlesztésekig."
+  >
+    <Fragment slot="content">
+      <p class="mb-4">
+        Egy vállalkozás weboldala általában az első találkozási pont a leendő ügyfelekkel. Ezért a tervezés során azt
+        vesszük alapul, hogy az érdeklődő gyorsan megértse, mivel foglalkozol, miért bízhat benned, és hogyan tud
+        egyszerűen kapcsolatba lépni veled.
+      </p>
+      <p class="mb-4">
+        A fejlesztési folyamatunk minden része ezt támogatja: tiszta tartalmi hierarchia, jól látható ajánlatkérési
+        pontok, gyors betöltés, mobilos használhatóság és keresőbarát technikai alapok. Így az oldal egyszerre támogatja
+        az első benyomást, a láthatóságot és az ügyfélszerzést.
+      </p>
+      <p>
+        Az elkészült rendszer később is bővíthető marad, ezért új funkciók, kampányoldalak vagy aloldalak bevezetése
+        rendezett módon történhet, újratervezés nélkül.
+      </p>
+    </Fragment>
+
+    <Fragment slot="image">
+      <img
+        src={firstImpressionImage.src}
+        alt="Weboldal első benyomás"
+        class="mx-auto w-full max-w-xl rounded-lg shadow-lg"
+        loading="lazy"
+      />
+    </Fragment>
+  </Content>
+
+  <Content
+    title="A weboldal készítés fő elemei"
+    subtitle="Ebben a szakaszban röviden összefoglaltuk, hogy milyen területekre figyelünk a kivitelezés során."
+    columns={2}
+    items={[
+      {
+        title: 'Stratégiai tervezés',
+        description:
+          'A weboldal felépítését a célközönséghez és az üzleti célokhoz igazítjuk, egyedi működésre tervezett struktúrával.',
+      },
+      {
+        title: 'Átlátható szerkezet és UX',
+        description:
+          'Logikus menürendszert, egyértelmű oldalfelépítést és jól követhető felhasználói utakat tervezünk.',
+      },
+      {
+        title: 'Reszponzív, mobilbarát megjelenés',
+        description: 'Minden fontos funkció gyorsan és kényelmesen működik telefonon, tableten és asztali gépen is.',
+      },
+      {
+        title: 'Gyors betöltés és stabil technikai alap',
+        description:
+          'Teljesítményoptimalizált frontendet építünk, hogy a weboldal gyors legyen és jó felhasználói élményt adjon.',
+      },
+      {
+        title: 'Technikai SEO alapok',
+        description:
+          'Keresőbarát struktúrát, meta beállításokat és tiszta kódot alakítunk ki a jobb organikus láthatóságért.',
+      },
+      {
+        title: 'Konverziófókusz',
+        description:
+          'A tartalmat és a felhívásokat úgy strukturáljuk, hogy több ajánlatkérés és kapcsolatfelvétel érkezzen.',
+      },
+      {
+        title: 'Integrációk és bővíthetőség',
+        description:
+          'Űrlapok, analitika, CRM vagy külső rendszerek bekötése később is egyszerűen továbbfejleszthető módon.',
+      },
+      {
+        title: 'Karbantartás és folyamatos támogatás',
+        description: 'Frissítés, hibajavítás, tartalomkezelés és fejlesztési támogatás az indulás után is.',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div
+        class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+        style={`background-image: url('${sectionThreeBg.src}');`}
+      >
+      </div>
+    </Fragment>
+  </Content>
+
+  <Content
+    isReversed
+    title="Milyen eredményre érdemes számítani?"
+    subtitle="Egy jól felépített weboldal támogatja a bizalomépítést, a kapcsolatfelvételt és a folyamatos növekedést."
+    classes={{ container: 'pb-0 md:pb-0 lg:pb-0' }}
+  >
+    <Fragment slot="content">
+      <p class="mb-4">
+        A weboldal fejlesztését hosszú távú eszközként kezeljük. A cél egy olyan online felület, amely rendezett keretet
+        ad a kommunikációnak, és folyamatosan támogatja az értékesítési munkát. Egy jó struktúrával felépített oldal
+        segít abban, hogy a látogatók gyorsan megtalálják a lényegi információkat, és magabiztosabban hozzanak döntést.
+      </p>
+      <p class="mb-4">
+        A működés akkor lesz igazán hatékony, amikor a weboldal összehangoltan kapcsolódik a kampányokhoz, az
+        ügyfélkezeléshez és az utánkövetéshez. Ezt a szemléletet már az induláskor beépítjük a struktúrába, így a
+        forgalomterelés és az ügyfélszerzés ugyanabba az irányba tud dolgozni.
+      </p>
+    </Fragment>
+
+    <Fragment slot="image">
+      <img
+        src={webDesignImage.src}
+        alt="Weboldal tervezés"
+        class="mx-auto w-full max-w-xl rounded-lg shadow-lg"
+        loading="lazy"
+      />
+    </Fragment>
+  </Content>
+
+  <Content
+    isAfterContent
+    columns={2}
+    classes={{ container: 'pt-0 md:pt-0 lg:pt-0' }}
+    items={[
+      {
+        title: 'Több releváns megkeresés',
+        description: 'A tartalom és a szerkezet azokra a látogatókra fókuszál, akikből valós érdeklődő lehet.',
+      },
+      {
+        title: 'Erősebb szakmai hitelesség',
+        description: 'A vizuális megjelenés és az üzenet egységes képet ad a vállalkozásodról.',
+      },
+      {
+        title: 'Jobb átláthatóság a döntésekhez',
+        description: 'Mérési pontokkal és analitikával pontosabban követhető, mely oldalak teljesítenek jól.',
+      },
+      {
+        title: 'Stabil alap a további bővítéshez',
+        description: 'A rendszer alkalmas későbbi marketing, CRM vagy automatizálási fejlesztések fogadására.',
+      },
+    ]}
+  />
+
+  <Features
+    id="szolgaltatasok"
+    tagline="További szolgáltatások"
+    title="Röviden, miben segítünk még"
+    subtitle="A részletes bemutatók külön aloldalakon lesznek elérhetők."
+    items={[
+      {
+        title: 'Social media kezelés',
+        description: 'Rendszeres, arculathoz illeszkedő tartalomgyártás és platformkezelés.',
+        icon: 'tabler:brand-instagram',
+      },
+      {
+        title: 'Hirdetéskezelés',
+        description: 'Facebook/Instagram és Google Ads kampányok felépítése, mérése és optimalizálása.',
+        icon: 'tabler:speakerphone',
+      },
+      {
+        title: 'Google cégprofil és értékelések',
+        description: 'Cégprofil karbantartás és automatizált értékelésgyűjtés a bizalom erősítésére.',
+        icon: 'tabler:star',
+      },
+      {
+        title: 'CRM rendszer',
+        description: 'Érdeklődők és ügyfelek átlátható kezelése egy központi, jól követhető rendszerben.',
+        icon: 'tabler:users-group',
+      },
+      {
+        title: 'Értékesítési automatizálás',
+        description: 'Email, SMS és utánkövetési folyamatok automatizálása az egyenletesebb működésért.',
+        icon: 'tabler:route-alt-left',
+      },
+      {
+        title: 'AI asszisztens',
+        description: 'Betanított chatbot 0-24 válaszadással weboldalon és üzenetküldő csatornákon.',
+        icon: 'tabler:robot',
+      },
+      {
+        title: 'E-mail és SMS marketing',
+        description: 'Listaépítés, szegmentálás és automatikus kampányok az aktív ügyfélkommunikációhoz.',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Analitika és riportok',
+        description: 'Döntéstámogató riportok kampányokról, érdeklődőkről és értékesítési teljesítményről.',
+        icon: 'tabler:chart-bar',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div
+        class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
+        style={`background-image: url('${servicesBg.src}');`}
+      >
+      </div>
+    </Fragment>
+  </Features>
+
+  <Steps
+    title="Így dolgozunk együtt"
+    items={[
+      {
+        title: '1. Felmérés',
+        description:
+          'Megismerjük a vállalkozásod céljait, célcsoportját és jelenlegi online helyzetét, majd kijelöljük a fejlesztési prioritásokat.',
+        icon: 'tabler:message-circle',
+      },
+      {
+        title: '2. Tervezés és kivitelezés',
+        description:
+          'Elkészítjük a weboldal információs struktúráját, vizuális irányát és megvalósítjuk a szükséges funkciókat.',
+        icon: 'tabler:code',
+      },
+      {
+        title: '3. Élesítés és támogatás',
+        description:
+          'Indulás után méréssel, finomhangolással és karbantartással támogatjuk az eredményes, hosszú távú működést.',
+        icon: 'tabler:rocket',
+      },
+    ]}
+  />
+
+  <CallToAction id="kapcsolat" actions={[{ variant: 'primary', text: 'Kapcsolatfelvétel', href: '/hu/kapcsolat' }]}>
+    <Fragment slot="title">Szeretnél egy üzletileg is működő weboldalt?</Fragment>
+
+    <Fragment slot="subtitle">
+      Ha megbízható, jól bővíthető és konverzióra optimalizált weboldalt szeretnél, szívesen segítünk.
+    </Fragment>
+  </CallToAction>
+</Layout>

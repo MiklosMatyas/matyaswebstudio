@@ -1,6 +1,6 @@
 import { SITE } from 'astrowind:config';
-import { headerData } from '~/navigation';
-import { getHomePermalink } from '~/utils/permalinks';
+import { getHeaderData } from '~/navigation';
+import { getLocalizedPath } from '~/utils/i18n-routing';
 
 type HeaderLink = {
   href?: string;
@@ -20,7 +20,11 @@ const flattenLinks = (links: HeaderLink[] = []): string[] =>
 
 export const GET = async () => {
   const siteUrl = SITE.site.endsWith('/') ? SITE.site : `${SITE.site}/`;
-  const urls = [getHomePermalink(), ...flattenLinks(headerData.links as HeaderLink[])]
+
+  const huHeaderLinks = flattenLinks(getHeaderData('hu').links as HeaderLink[]);
+  const enHeaderLinks = flattenLinks(getHeaderData('en').links as HeaderLink[]);
+
+  const urls = [getLocalizedPath('home', 'hu'), getLocalizedPath('home', 'en'), ...huHeaderLinks, ...enHeaderLinks]
     .map((href) => {
       try {
         return new URL(href, siteUrl);

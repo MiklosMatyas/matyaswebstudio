@@ -3,7 +3,8 @@ import Layout from '~/layouts/Layout.astro';
 import Header from '~/components/widgets/Header.astro';
 import Footer from '~/components/widgets/Footer.astro';
 
-import { headerData, footerData } from '~/navigation';
+import { getFooterData, getHeaderData } from '~/navigation';
+import { getLanguageSwitcherLinks, getLocaleFromPath } from '~/utils/i18n-routing';
 
 import type { MetaData } from '~/types';
 
@@ -12,6 +13,10 @@ export interface Props {
 }
 
 const { metadata } = Astro.props;
+const locale = getLocaleFromPath(Astro.url.pathname);
+const headerData = getHeaderData(locale);
+const footerData = getFooterData(locale);
+const languageLinks = getLanguageSwitcherLinks(Astro.url.pathname);
 ---
 
 <Layout metadata={metadata}>
@@ -19,7 +24,7 @@ const { metadata } = Astro.props;
     <!-- <Announcement /> -->
   </slot>
   <slot name="header">
-    <Header {...headerData} isSticky position="right" />
+    <Header {...headerData} languageLinks={languageLinks} isSticky position="right" />
   </slot>
   <main>
     <slot />

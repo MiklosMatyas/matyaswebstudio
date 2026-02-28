@@ -1,0 +1,261 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import heroBg from '~/assets/images/weboldal-keszites-hero.webp';
+import sectionThreeBg from '~/assets/images/ceges-weboldal-keszites-bg.webp';
+import firstImpressionImage from '~/assets/images/weboldal-elso-benyomas.webp';
+import webDesignImage from '~/assets/images/weboldal-tervezes.webp';
+import servicesBg from '~/assets/images/online-szolgaltatasok-bg.webp';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Matyas Web Studio',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    actions={[
+      { variant: 'primary', text: 'Request a quote', href: '/en/contact' },
+      { text: 'Website development', href: '/en/contact' },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style={`background-image: url('${heroBg.src}');`}>
+      </div>
+      <div class="absolute inset-0 bg-white/35 dark:bg-slate-900/35"></div>
+    </Fragment>
+
+    <Fragment slot="title">
+      Website Development
+      <span class="text-accent dark:text-white"> for Growing Businesses</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      We design and build business websites that are fast, mobile-friendly, and structured around real business goals.
+      The focus is simple: more qualified enquiries, clearer communication, and reliable performance.
+    </Fragment>
+  </Hero>
+
+  <Content
+    id="website-development"
+    title="What you get when working with us"
+    subtitle="We cover the full process from strategy and structure through launch and ongoing growth."
+  >
+    <Fragment slot="content">
+      <p class="mb-4">
+        A company website is usually the first meaningful touchpoint with a potential client. During planning, we make
+        sure visitors can quickly understand what you do, why they should trust you, and how they can contact you.
+      </p>
+      <p class="mb-4">
+        Every part of our delivery supports this: clean content hierarchy, clear call-to-action points, fast loading,
+        mobile usability, and strong technical SEO foundations.
+      </p>
+      <p>
+        Your site stays extendable after launch, so new campaign pages, features, and subpages can be added without a
+        redesign.
+      </p>
+    </Fragment>
+
+    <Fragment slot="image">
+      <img
+        src={firstImpressionImage.src}
+        alt="Strong first impression website"
+        class="mx-auto w-full max-w-xl rounded-lg shadow-lg"
+        loading="lazy"
+      />
+    </Fragment>
+  </Content>
+
+  <Content
+    title="Core elements of our website projects"
+    subtitle="A quick overview of the areas we prioritise during delivery."
+    columns={2}
+    items={[
+      {
+        title: 'Strategic planning',
+        description: 'We align site structure with your audience and business objectives.',
+      },
+      {
+        title: 'Clear UX and information flow',
+        description: 'We build logical navigation and straightforward page structures.',
+      },
+      {
+        title: 'Responsive, mobile-first delivery',
+        description: 'Key actions remain smooth and accessible on every screen size.',
+      },
+      {
+        title: 'Fast and stable technical base',
+        description: 'Performance-focused front-end implementation for a strong user experience.',
+      },
+      {
+        title: 'Technical SEO foundations',
+        description: 'Search-friendly structure, metadata setup, and clean code standards.',
+      },
+      {
+        title: 'Conversion focus',
+        description: 'Content and calls-to-action are structured to generate more enquiries.',
+      },
+      {
+        title: 'Integrations and scalability',
+        description: 'Forms, analytics, CRM, and external systems can be added in a clean way.',
+      },
+      {
+        title: 'Maintenance and support',
+        description: 'Updates, fixes, and ongoing technical support after launch.',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div
+        class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+        style={`background-image: url('${sectionThreeBg.src}');`}
+      >
+      </div>
+    </Fragment>
+  </Content>
+
+  <Content
+    isReversed
+    title="What outcomes should you expect?"
+    subtitle="A well-structured website supports trust, enquiries, and long-term growth."
+    classes={{ container: 'pb-0 md:pb-0 lg:pb-0' }}
+  >
+    <Fragment slot="content">
+      <p class="mb-4">
+        We treat website development as a long-term business asset. The aim is a platform that supports daily sales
+        activity, communicates clearly, and helps visitors make confident decisions.
+      </p>
+      <p class="mb-4">
+        The best results come when your website is connected to campaigns, lead handling, and follow-up workflows. We
+        embed this mindset into the structure from day one.
+      </p>
+    </Fragment>
+
+    <Fragment slot="image">
+      <img
+        src={webDesignImage.src}
+        alt="Website planning"
+        class="mx-auto w-full max-w-xl rounded-lg shadow-lg"
+        loading="lazy"
+      />
+    </Fragment>
+  </Content>
+
+  <Content
+    isAfterContent
+    columns={2}
+    classes={{ container: 'pt-0 md:pt-0 lg:pt-0' }}
+    items={[
+      {
+        title: 'More qualified enquiries',
+        description: 'Content and structure focus on visitors most likely to become real leads.',
+      },
+      {
+        title: 'Stronger professional credibility',
+        description: 'Design and messaging create a consistent, trustworthy brand impression.',
+      },
+      {
+        title: 'Clearer decision-making data',
+        description: 'Analytics points show which pages and channels perform best.',
+      },
+      {
+        title: 'Scalable foundation',
+        description: 'The system remains ready for future marketing, CRM, or automation upgrades.',
+      },
+    ]}
+  />
+
+  <Features
+    id="services"
+    tagline="Additional services"
+    title="What else we help with"
+    subtitle="Detailed service pages are available separately."
+    items={[
+      {
+        title: 'Social media management',
+        description: 'Consistent content production and platform management aligned with your brand.',
+        icon: 'tabler:brand-instagram',
+      },
+      {
+        title: 'Paid advertising',
+        description: 'Meta and Google Ads campaign setup, tracking, and optimisation.',
+        icon: 'tabler:speakerphone',
+      },
+      {
+        title: 'Google Business Profile & reviews',
+        description: 'Profile maintenance and review workflows to strengthen trust.',
+        icon: 'tabler:star',
+      },
+      {
+        title: 'CRM system setup',
+        description: 'Lead and client management in one clear, centralised system.',
+        icon: 'tabler:users-group',
+      },
+      {
+        title: 'Sales automation',
+        description: 'Email, SMS, and follow-up process automation for consistent operations.',
+        icon: 'tabler:route-alt-left',
+      },
+      {
+        title: 'AI assistant',
+        description: 'Trained chatbot support available 24/7 on your website and messaging channels.',
+        icon: 'tabler:robot',
+      },
+      {
+        title: 'Email and SMS marketing',
+        description: 'List building, segmentation, and automated campaigns for active communication.',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Analytics and reporting',
+        description: 'Decision-focused reports on campaigns, leads, and sales performance.',
+        icon: 'tabler:chart-bar',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div
+        class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
+        style={`background-image: url('${servicesBg.src}');`}
+      >
+      </div>
+    </Fragment>
+  </Features>
+
+  <Steps
+    title="How we work together"
+    items={[
+      {
+        title: '1. Discovery',
+        description:
+          'We review your goals, audience, and current online setup, then define the right priorities for delivery.',
+        icon: 'tabler:message-circle',
+      },
+      {
+        title: '2. Planning & implementation',
+        description: 'We design the information architecture and visual direction, then build the required features.',
+        icon: 'tabler:code',
+      },
+      {
+        title: '3. Launch & optimisation',
+        description:
+          'After go-live, we support growth with measurement, fine-tuning, and ongoing technical maintenance.',
+        icon: 'tabler:rocket',
+      },
+    ]}
+  />
+
+  <CallToAction id="contact" actions={[{ variant: 'primary', text: 'Get in touch', href: '/en/contact' }]}>
+    <Fragment slot="title">Need a website that also works commercially?</Fragment>
+
+    <Fragment slot="subtitle">
+      If you need a reliable, scalable, conversion-focused website, we would be glad to support your project.
+    </Fragment>
+  </CallToAction>
+</Layout>

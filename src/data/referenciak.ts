@@ -1,5 +1,4 @@
 import heroImage from '~/assets/images/weboldal-keszites-hero.webp';
-import defaultImage from '~/assets/images/websites/website-bentley.webp';
 
 export const referenciakHero = {
   title: 'Referenciák',

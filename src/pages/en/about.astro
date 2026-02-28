@@ -1,0 +1,125 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import type { ImageMetadata } from 'astro';
+import { Icon } from 'astro-icon/components';
+
+import aboutHeroBg from '~/assets/images/weboldal-keszites-hero.webp';
+import aboutImage from '~/assets/images/matyas_miklos_right-500.webp';
+
+const metadata = {
+  title: 'About',
+};
+
+const testimonialImageModules = import.meta.glob<ImageMetadata>(
+  '~/assets/images/testimonials/*.{webp,jpg,jpeg,png,svg}',
+  {
+    eager: true,
+    import: 'default',
+  }
+);
+
+const testimonialImages = Object.values(testimonialImageModules);
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Collaborative delivery with strong commercial focus"
+    title="About"
+    subtitle="We are an experienced, fast, and effective development team. We understand both technology and business operations, so every project is aligned with real commercial objectives."
+    actions={[{ variant: 'primary', text: 'Get in touch', href: '/en/contact' }]}
+  >
+    <Fragment slot="bg">
+      <div
+        class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={`background-image: url('${aboutHeroBg.src}');`}
+      >
+      </div>
+      <div class="absolute inset-0 bg-white/35 dark:bg-slate-900/35"></div>
+    </Fragment>
+  </Hero>
+
+  <Content
+    title="Why work with us?"
+    subtitle="Our small team is built around speed, flexibility, and direct communication. You work directly with developers who understand your business needs."
+    contentAreaClass="md:basis-4/6"
+    imageAreaClass="md:basis-2/6"
+    classes={{ container: 'pb-0 md:pb-0 lg:pb-1' }}
+  >
+    <Fragment slot="content">
+      <p class="mb-4">
+        I have worked in web solutions for more than 15 years. My career started in programming, and from 2005 onward I
+        focused on web development. I worked with companies and agencies, including teams in Ireland, gaining valuable
+        international experience.
+      </p>
+      <p class="mb-4">
+        Over the years, I covered a broad range of technical areas: front-end and back-end delivery, PHP, JavaScript,
+        databases, and deep hands-on work with platforms such as Drupal and WordPress.
+      </p>
+      <p class="mb-4">
+        As a freelancer, I mainly supported international clients, especially from the United States, the United
+        Kingdom, and Australia. That experience gave me direct insight into how businesses operate day-to-day and what
+        blocks their growth.
+      </p>
+      <p>
+        Today, I combine technical delivery with business thinking to help companies become more efficient, automate key
+        workflows, and scale with confidence.
+      </p>
+    </Fragment>
+
+    <Fragment slot="image">
+      <figure class="w-full max-w-[500px] ml-auto">
+        <img
+          src={aboutImage.src}
+          alt="Miklos Matyas web developer"
+          class="w-full rounded-lg shadow-lg"
+          loading="lazy"
+        />
+        <figcaption class="mt-2 text-sm text-muted dark:text-slate-400 text-center">
+          Miklos Matyas / Founder - Web Developer
+        </figcaption>
+      </figure>
+    </Fragment>
+  </Content>
+
+  <section id="reviews" class="relative not-prose scroll-mt-[72px]">
+    <div class="relative mx-auto max-w-7xl px-4 md:px-6 pt-0 md:pt-0 lg:pt-0 pb-12 md:pb-16 lg:pb-20 text-default">
+      <div class="mb-8 md:mb-10 text-center">
+        <h2 class="font-bold leading-tighter tracking-tighter font-heading text-heading text-3xl">Client Reviews</h2>
+        <p class="mt-4 text-muted">Feedback from previous Upwork clients.</p>
+        <a
+          class="mt-4 inline-flex items-center gap-1 text-muted hover:text-primary hover:underline"
+          href="https://www.upwork.com/freelancers/~0105d6923a730ac73d"
+          target="_blank"
+          rel="nofollow noopener noreferrer"
+        >
+          https://www.upwork.com/freelancers/~0105d6923a730ac73d
+          <Icon name="tabler:external-link" class="w-4 h-4 shrink-0" />
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        {
+          testimonialImages.map((image, index) => (
+            <figure class="rounded-xl overflow-hidden border border-slate-200/70 dark:border-slate-700/70 bg-slate-50 dark:bg-slate-900">
+              <img
+                src={image.src}
+                alt={`Client review ${index + 1}`}
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </figure>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Start your project', href: '/en/contact' }]}
+    title="Let’s build your next web project"
+    subtitle="If you need a commercially useful and scalable web solution, get in touch."
+  />
+</Layout>
