@@ -1,0 +1,127 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import type { ImageMetadata } from 'astro';
+import { Icon } from 'astro-icon/components';
+
+import aboutHeroBg from '~/assets/images/weboldal-keszites-hero.webp';
+import aboutImage from '~/assets/images/matyas_miklos_right-500.webp';
+
+const metadata = {
+  title: 'Über Uns',
+  description:
+    'Matyas Web Studio: mehr als 15 Jahre Erfahrung in Webentwicklung, direkte Zusammenarbeit und wirtschaftlich orientierte digitale Umsetzung.',
+};
+
+const testimonialImageModules = import.meta.glob<ImageMetadata>(
+  '~/assets/images/testimonials/*.{webp,jpg,jpeg,png,svg}',
+  {
+    eager: true,
+    import: 'default',
+  }
+);
+
+const testimonialImages = Object.values(testimonialImageModules);
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Kollaborative Zusammenarbeit mit klarem Business-Fokus"
+    title="Über Uns"
+    subtitle="Wir sind ein erfahrenes, schnelles und effizientes Entwicklungsteam. Wir verbinden technisches Know-how mit praktischem Verständnis für Unternehmensziele."
+    actions={[{ variant: 'primary', text: 'Kontakt aufnehmen', href: '/de/kontakt' }]}
+  >
+    <Fragment slot="bg">
+      <div
+        class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={`background-image: url('${aboutHeroBg.src}');`}
+      >
+      </div>
+      <div class="absolute inset-0 bg-white/35 dark:bg-slate-900/35"></div>
+    </Fragment>
+  </Hero>
+
+  <Content
+    title="Warum mit uns arbeiten?"
+    subtitle="Unser kleines Team steht für Schnelligkeit, Flexibilität und direkte Kommunikation. Sie arbeiten ohne Umwege mit den Entwicklern selbst."
+    contentAreaClass="md:basis-4/6"
+    imageAreaClass="md:basis-2/6"
+    classes={{ container: 'pb-0 md:pb-0 lg:pb-1' }}
+  >
+    <Fragment slot="content">
+      <p class="mb-4">
+        Ich arbeite seit über 15 Jahren an Weblösungen. Mein Weg begann in der Softwareentwicklung, seit 2005 liegt mein
+        Schwerpunkt auf Webprojekten. Ich war in Unternehmen und Agenturen tätig, unter anderem in Irland, wodurch ich
+        wertvolle internationale Erfahrung sammeln konnte.
+      </p>
+      <p class="mb-4">
+        Im Laufe der Jahre habe ich in vielen Bereichen gearbeitet: Frontend und Backend, PHP, JavaScript, Datenbanken
+        sowie tiefgehende Projekterfahrung mit Drupal und WordPress.
+      </p>
+      <p class="mb-4">
+        Als Freelancer habe ich vor allem internationale Kunden betreut, insbesondere aus den USA, Großbritannien und
+        Australien. Dadurch habe ich die operativen Herausforderungen und Wachstumshebel unterschiedlichster Unternehmen
+        unmittelbar kennengelernt.
+      </p>
+      <p>
+        Heute kombiniere ich technisches Fachwissen mit unternehmerischem Denken, um Unternehmen effizienter zu machen,
+        Prozesse zu automatisieren und nachhaltiges Wachstum zu unterstützen.
+      </p>
+    </Fragment>
+
+    <Fragment slot="image">
+      <figure class="w-full max-w-[500px] ml-auto">
+        <img
+          src={aboutImage.src}
+          alt="Miklos Matyas Webentwickler"
+          class="w-full rounded-lg shadow-lg"
+          loading="lazy"
+        />
+        <figcaption class="mt-2 text-sm text-muted dark:text-slate-400 text-center">
+          Miklos Matyas / Gründer - Webentwickler
+        </figcaption>
+      </figure>
+    </Fragment>
+  </Content>
+
+  <section id="bewertungen" class="relative not-prose scroll-mt-[72px]">
+    <div class="relative mx-auto max-w-7xl px-4 md:px-6 pt-0 md:pt-0 lg:pt-0 pb-12 md:pb-16 lg:pb-20 text-default">
+      <div class="mb-8 md:mb-10 text-center">
+        <h2 class="font-bold leading-tighter tracking-tighter font-heading text-heading text-3xl">Kundenbewertungen</h2>
+        <p class="mt-4 text-muted">Feedback von früheren Kunden auf Upwork.</p>
+        <a
+          class="mt-4 inline-flex items-center gap-1 text-muted hover:text-primary hover:underline"
+          href="https://www.upwork.com/freelancers/~0105d6923a730ac73d"
+          target="_blank"
+          rel="nofollow noopener noreferrer"
+        >
+          https://www.upwork.com/freelancers/~0105d6923a730ac73d
+          <Icon name="tabler:external-link" class="w-4 h-4 shrink-0" />
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        {
+          testimonialImages.map((image, index) => (
+            <figure class="rounded-xl overflow-hidden border border-slate-200/70 dark:border-slate-700/70 bg-slate-50 dark:bg-slate-900">
+              <img
+                src={image.src}
+                alt={`Kundenbewertung ${index + 1}`}
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </figure>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Projekt starten', href: '/de/kontakt' }]}
+    title="Lassen Sie uns Ihr nächstes Webprojekt umsetzen"
+    subtitle="Wenn Sie eine skalierbare und wirtschaftlich nutzbare Weblösung suchen, sprechen wir gern mit Ihnen."
+  />
+</Layout>

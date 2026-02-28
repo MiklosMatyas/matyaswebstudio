@@ -1,0 +1,213 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import webDesignImage from '~/assets/images/weboldal-tervezes.webp';
+import heroBg from '~/assets/images/weboldal-keszites-hero.webp';
+import webSystemImage from '~/assets/images/web-system.webp';
+import oskarbImage from '~/assets/images/oskarb.jpeg';
+import paulPImage from '~/assets/images/paulp.jpeg';
+
+const metadata = {
+  title: 'Leistungen',
+  description:
+    'Webentwicklung, Wartung, CRM, Automatisierung und digitales Wachstum für KMU in einem integrierten, messbaren und skalierbaren System.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Webentwicklung und Online-Wachstumsunterstützung für KMU"
+    title="Leistungen"
+    subtitle="Wir bieten ein integriertes Leistungssystem, in dem Website, Marketing und Kundenprozesse zusammenarbeiten und planbare Anfragen erzeugen."
+    actions={[{ variant: 'primary', text: 'Kontakt aufnehmen', href: '/de/kontakt' }]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style={`background-image: url('${heroBg.src}');`}>
+      </div>
+      <div class="absolute inset-0 bg-white/35 dark:bg-slate-900/35"></div>
+    </Fragment>
+  </Hero>
+
+  <Features2
+    title="Unsere Kernleistungen"
+    subtitle="In diesen Bereichen unterstützen wir Unternehmen tagtäglich."
+    columns={3}
+    items={[
+      {
+        title: 'Unternehmenswebsites',
+        description: 'Moderne, mobile und schnelle Websites mit klarem Business-Fokus.',
+        icon: 'tabler:building-store',
+      },
+      {
+        title: 'Website-Wartung',
+        description: 'Updates, Fehlerbehebung, Performance-Optimierung und laufender technischer Support.',
+        icon: 'tabler:tool',
+      },
+      {
+        title: 'Social Media und Content',
+        description: 'Kanalgerechte Inhalte und planbare Kommunikation mit konsistenter Markenlinie.',
+        icon: 'tabler:brand-instagram',
+      },
+      {
+        title: 'Anzeigenmanagement',
+        description: 'Planung, Umsetzung, Messung und Optimierung von Meta- und Google-Ads-Kampagnen.',
+        icon: 'tabler:speakerphone',
+      },
+      {
+        title: 'Google-Unternehmensprofil und Bewertungen',
+        description: 'Mehr Sichtbarkeit und Vertrauen durch aktive Profilpflege und Bewertungsprozesse.',
+        icon: 'tabler:star',
+      },
+      {
+        title: 'CRM-System',
+        description: 'Zentrale Verwaltung von Leads, Kunden und Aufgaben mit klaren Statuswerten.',
+        icon: 'tabler:users-group',
+      },
+      {
+        title: 'Vertriebsautomatisierung',
+        description: 'Automatisierte E-Mail-, SMS- und Follow-up-Prozesse für schnellere Bearbeitung.',
+        icon: 'tabler:route-alt-left',
+      },
+      {
+        title: 'AI-Assistent',
+        description: 'Trainierter Chatbot für Website und Messenger-Kanäle mit 24/7-Unterstützung.',
+        icon: 'tabler:robot',
+      },
+      {
+        title: 'Analytics und Reports',
+        description: 'Datenbasierte Auswertungen für Kampagnen, Seitenleistung und Kundenprozesse.',
+        icon: 'tabler:chart-bar',
+      },
+    ]}
+  />
+
+  <Content
+    isReversed
+    title="Webentwicklung als Fundament unserer Leistungen"
+    items={[
+      {
+        title: 'Struktur nach Geschäftszielen',
+        description: 'Die Seitenarchitektur folgt Zielgruppe, Angebot und Vertriebsprozess.',
+        icon: 'tabler:target-arrow',
+      },
+      {
+        title: 'Schnelle, responsive Umsetzung',
+        description: 'Stabiles und flüssiges Nutzungserlebnis auf Mobilgeräten und Desktop.',
+        icon: 'tabler:device-mobile',
+      },
+      {
+        title: 'Technische SEO-Basis',
+        description: 'Suchmaschinenfreundlicher Aufbau, saubere Code-Struktur und korrekte Seitensignale.',
+        icon: 'tabler:search',
+      },
+      {
+        title: 'Skalierbarkeit für Wachstum',
+        description: 'Neue Seiten, Features und Integrationen lassen sich ohne Strukturbruch erweitern.',
+        icon: 'tabler:plug-connected',
+      },
+    ]}
+    image={{
+      src: webDesignImage,
+      alt: 'Webentwicklung',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Was bedeutet das konkret?</h3>
+      Ihre Website ist das Zentrum Ihrer digitalen Prozesse. Deshalb stimmen wir Content-Logik, Design und Technik so aufeinander
+      ab, dass Besucher sich schnell orientieren und leicht Kontakt aufnehmen können.
+    </Fragment>
+  </Content>
+
+  <Content
+    isAfterContent
+    title="Warum ist das für KMU besonders relevant?"
+    items={[
+      {
+        title: 'Planbarere Kundenprozesse',
+        description: 'Webanfragen, Formulare und Kontaktpunkte laufen in klaren Abläufen zusammen.',
+        icon: 'tabler:timeline',
+      },
+      {
+        title: 'Starkere Vertrauensbasis',
+        description: 'Professioneller Auftritt und konsistente Kommunikation erleichtern Entscheidungen.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'Höhere Messbarkeit',
+        description: 'Analytics zeigen, welche Kanäle und Seiten tatsächlich Ergebnisse liefern.',
+        icon: 'tabler:gauge',
+      },
+      {
+        title: 'Kontinuierliche Optimierung',
+        description: 'Regelmäßiger Feinschliff und Automatisierung steigern die Effizienz langfristig.',
+        icon: 'tabler:trending-up',
+      },
+    ]}
+    image={{
+      src: webSystemImage,
+      alt: 'KMU Zusammenarbeit',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Nicht Einzelmaßnahmen, sondern ein System
+      </h3>
+      Wir schaffen ein Setup, in dem Website, Kampagnen, CRM und Follow-up das gleiche Ziel verfolgen: mehr relevante Leads
+      und bessere Kundenerfahrung.
+    </Fragment>
+  </Content>
+
+  <Testimonials
+    title="Kundenstimmen"
+    testimonials={[
+      {
+        testimonial: `Miklos ist ein äußerst talentierter Entwickler und sehr angenehm in der Zusammenarbeit. Er kommuniziert klar, stellt die richtigen Fragen und liefert zuverlässige Lösungen.`,
+        name: 'Oskar B',
+        job: 'Norwegen',
+        image: {
+          src: oskarbImage,
+          alt: 'Kundenstimme',
+        },
+      },
+      {
+        testimonial: `Ich brauchte kurzfristig Unterstützung für ein Projekt. Miklos ist eingesprungen und hat das Projekt entscheidend vorangebracht. Klare Empfehlung.`,
+        name: 'Paul Pinkman',
+        job: 'Vereinigte Staaten',
+        image: {
+          src: paulPImage,
+          alt: 'Kundenstimme',
+        },
+      },
+      {
+        testimonial: `Miklos war ausgezeichnet. Wir haben ihm eine alte Drupal-Website übergeben, die er reibungslos modernisiert und auf neue Server migriert hat. Sehr effizient und unkompliziert.`,
+        name: 'Oliver Ryan',
+        job: 'Vereinigte Staaten',
+        image: {
+          src: 'https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=824&q=80',
+          alt: 'Kundenstimme',
+        },
+      },
+    ]}
+    callToAction={{
+      text: 'Weitere Bewertungen',
+      href: '/de/ueber-uns#bewertungen',
+      icon: 'tabler:chevron-right',
+    }}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Angebot anfragen',
+        href: '/de/kontakt',
+      },
+    ]}
+    title="Bringen wir Ihre digitale Arbeitsweise auf das nächste Level"
+    subtitle="Nennen Sie uns Ihre Ziele, wir erstellen eine skalierbare Weblösung passend zu Ihrem Geschäft."
+  />
+</Layout>

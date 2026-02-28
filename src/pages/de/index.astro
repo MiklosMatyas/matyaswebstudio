@@ -1,0 +1,266 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import heroBg from '~/assets/images/weboldal-keszites-hero.webp';
+import sectionThreeBg from '~/assets/images/ceges-weboldal-keszites-bg.webp';
+import firstImpressionImage from '~/assets/images/weboldal-elso-benyomas.webp';
+import webDesignImage from '~/assets/images/weboldal-tervezes.webp';
+import servicesBg from '~/assets/images/online-szolgaltatasok-bg.webp';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Matyas Web Studio',
+  ignoreTitleTemplate: true,
+  description:
+    'Professionelle Webentwicklung für Unternehmen: schnelle, mobile und SEO-freundliche Websites mit klarem Fokus auf qualifizierte Anfragen und nachhaltiges Wachstum.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    actions={[
+      { variant: 'primary', text: 'Angebot anfragen', href: '/de/kontakt' },
+      { text: 'Webentwicklung', href: '/de/kontakt' },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style={`background-image: url('${heroBg.src}');`}>
+      </div>
+      <div class="absolute inset-0 bg-white/35 dark:bg-slate-900/35"></div>
+    </Fragment>
+
+    <Fragment slot="title">
+      Webentwicklung
+      <span class="text-accent dark:text-white"> für Unternehmen</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Wir konzipieren und entwickeln Unternehmenswebsites, die schnell, mobilfreundlich und auf klare Geschäftsziele
+      ausgerichtet sind. Unser Fokus: mehr qualifizierte Anfragen, bessere Kommunikation und stabile technische
+      Umsetzung.
+    </Fragment>
+  </Hero>
+
+  <Content
+    id="webentwicklung"
+    title="Was Sie bei der Zusammenarbeit mit uns erhalten"
+    subtitle="Wir begleiten den gesamten Prozess von der Strategie bis zum Launch und zur laufenden Weiterentwicklung."
+  >
+    <Fragment slot="content">
+      <p class="mb-4">
+        Für viele Interessenten ist die Website der erste Kontaktpunkt mit Ihrem Unternehmen. Deshalb gestalten wir
+        Inhalte und Struktur so, dass Besucher schnell verstehen, was Sie anbieten, warum Sie vertrauenswürdig sind und
+        wie sie einfach Kontakt aufnehmen können.
+      </p>
+      <p class="mb-4">
+        Unser Umsetzungsprozess deckt genau das ab: klare Content-Hierarchie, sichtbare Kontaktpunkte, schnelle
+        Ladezeiten, mobile Nutzbarkeit und saubere technische SEO-Basis.
+      </p>
+      <p>
+        Ihre Website bleibt nach dem Launch erweiterbar, damit neue Funktionen, Kampagnenseiten oder Unterseiten ohne
+        Neuentwicklung integriert werden können.
+      </p>
+    </Fragment>
+
+    <Fragment slot="image">
+      <img
+        src={firstImpressionImage.src}
+        alt="Starker erster Eindruck durch Website"
+        class="mx-auto w-full max-w-xl rounded-lg shadow-lg"
+        loading="lazy"
+      />
+    </Fragment>
+  </Content>
+
+  <Content
+    title="Kernelemente unserer Webprojekte"
+    subtitle="Ein kompakter Überblick über die Bereiche, die wir konsequent priorisieren."
+    columns={2}
+    items={[
+      {
+        title: 'Strategische Planung',
+        description: 'Wir richten die Seitenstruktur an Zielgruppe und Geschäftszielen aus.',
+      },
+      {
+        title: 'Klare UX und Informationsstruktur',
+        description: 'Wir entwickeln logische Navigation und nachvollziehbare Nutzerführung.',
+      },
+      {
+        title: 'Responsives, mobilfreundliches Design',
+        description: 'Alle wichtigen Funktionen bleiben auf jedem Gerät schnell bedienbar.',
+      },
+      {
+        title: 'Schnelle und stabile technische Basis',
+        description: 'Performance-orientierte Frontend-Umsetzung für ein starkes Nutzungserlebnis.',
+      },
+      {
+        title: 'Technische SEO-Grundlagen',
+        description: 'Suchmaschinenfreundliche Struktur, Metadaten und sauberer Code.',
+      },
+      {
+        title: 'Conversion-Fokus',
+        description: 'Inhalte und Handlungsaufforderungen sind auf mehr Anfragen optimiert.',
+      },
+      {
+        title: 'Integrationen und Skalierbarkeit',
+        description: 'Formulare, Analytics, CRM und externe Systeme lassen sich sauber anbinden.',
+      },
+      {
+        title: 'Wartung und laufender Support',
+        description: 'Updates, Fehlerbehebung und technische Betreuung nach dem Launch.',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div
+        class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+        style={`background-image: url('${sectionThreeBg.src}');`}
+      >
+      </div>
+    </Fragment>
+  </Content>
+
+  <Content
+    isReversed
+    title="Welche Ergebnisse sind realistisch?"
+    subtitle="Eine klar aufgebaute Website verbessert Vertrauen, Kontaktquote und langfristige Skalierbarkeit."
+    classes={{ container: 'pb-0 md:pb-0 lg:pb-0' }}
+  >
+    <Fragment slot="content">
+      <p class="mb-4">
+        Wir betrachten Webentwicklung als langfristiges Geschäftswerkzeug. Ziel ist eine Plattform, die Ihre
+        Kommunikation strukturiert und Vertriebsprozesse aktiv unterstützt.
+      </p>
+      <p class="mb-4">
+        Besonders wirkungsvoll wird die Website, wenn sie mit Kampagnen, Lead-Management und Follow-up-Prozessen
+        zusammenspielt. Diese Logik berücksichtigen wir bereits in der Grundstruktur.
+      </p>
+    </Fragment>
+
+    <Fragment slot="image">
+      <img
+        src={webDesignImage.src}
+        alt="Website Planung"
+        class="mx-auto w-full max-w-xl rounded-lg shadow-lg"
+        loading="lazy"
+      />
+    </Fragment>
+  </Content>
+
+  <Content
+    isAfterContent
+    columns={2}
+    classes={{ container: 'pt-0 md:pt-0 lg:pt-0' }}
+    items={[
+      {
+        title: 'Mehr qualifizierte Anfragen',
+        description: 'Inhalte und Aufbau sprechen vor allem potenzielle Kunden mit klarer Absicht an.',
+      },
+      {
+        title: 'Höhere fachliche Glaubwürdigkeit',
+        description: 'Design und Botschaft erzeugen ein konsistentes, professionelles Bild.',
+      },
+      {
+        title: 'Bessere Datenbasis für Entscheidungen',
+        description: 'Analytics zeigen, welche Seiten und Kanäle tatsächlich Leistung bringen.',
+      },
+      {
+        title: 'Skalierbare technische Grundlage',
+        description: 'Das System ist für spatere Marketing-, CRM- und Automatisierungs-Ausbaustufen vorbereitet.',
+      },
+    ]}
+  />
+
+  <Features
+    id="leistungen"
+    tagline="Weitere Leistungen"
+    title="Wobei wir Sie zusätzlich unterstützen"
+    subtitle="Detaillierte Leistungsseiten können separat aufgebaut werden."
+    items={[
+      {
+        title: 'Social-Media-Management',
+        description: 'Kontinuierliche Content-Produktion und Kanalbetreuung im Einklang mit Ihrer Marke.',
+        icon: 'tabler:brand-instagram',
+      },
+      {
+        title: 'Paid Advertising',
+        description: 'Aufbau, Tracking und Optimierung von Meta- und Google-Ads-Kampagnen.',
+        icon: 'tabler:speakerphone',
+      },
+      {
+        title: 'Google Business Profile & Bewertungen',
+        description: 'Profilpflege und Bewertungsprozesse für mehr Sichtbarkeit und Vertrauen.',
+        icon: 'tabler:star',
+      },
+      {
+        title: 'CRM-System',
+        description: 'Zentrale und transparente Verwaltung von Leads und Kundenkontakten.',
+        icon: 'tabler:users-group',
+      },
+      {
+        title: 'Sales-Automatisierung',
+        description: 'Automatisierte E-Mail-, SMS- und Follow-up-Abläufe für stabile Prozesse.',
+        icon: 'tabler:route-alt-left',
+      },
+      {
+        title: 'AI-Assistent',
+        description: 'Trainierter Chatbot mit 24/7-Antworten auf Website und Messenger-Kanälen.',
+        icon: 'tabler:robot',
+      },
+      {
+        title: 'E-Mail- und SMS-Marketing',
+        description: 'Listenaufbau, Segmentierung und automatisierte Kampagnen für aktive Kundenkommunikation.',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Analytics und Reporting',
+        description: 'Handlungsrelevante Reports zu Kampagnen, Leads und Vertriebsleistung.',
+        icon: 'tabler:chart-bar',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div
+        class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
+        style={`background-image: url('${servicesBg.src}');`}
+      >
+      </div>
+    </Fragment>
+  </Features>
+
+  <Steps
+    title="So arbeiten wir zusammen"
+    items={[
+      {
+        title: '1. Analyse',
+        description:
+          'Wir analysieren Ziele, Zielgruppe und bestehende Online-Struktur und definieren die relevanten Prioritäten.',
+        icon: 'tabler:message-circle',
+      },
+      {
+        title: '2. Planung und Umsetzung',
+        description:
+          'Wir entwickeln Informationsarchitektur, visuelle Richtung und setzen die benötigten Funktionen um.',
+        icon: 'tabler:code',
+      },
+      {
+        title: '3. Launch und Optimierung',
+        description:
+          'Nach dem Go-live begleiten wir die Weiterentwicklung mit Messung, Feinschliff und technischer Wartung.',
+        icon: 'tabler:rocket',
+      },
+    ]}
+  />
+
+  <CallToAction id="kontakt" actions={[{ variant: 'primary', text: 'Kontakt aufnehmen', href: '/de/kontakt' }]}>
+    <Fragment slot="title">Sie brauchen eine Website, die auch wirtschaftlich funktioniert?</Fragment>
+
+    <Fragment slot="subtitle">
+      Wenn Sie eine zuverlässige, skalierbare und conversion-orientierte Website suchen, unterstützen wir Sie gern.
+    </Fragment>
+  </CallToAction>
+</Layout>

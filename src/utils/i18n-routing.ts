@@ -1,12 +1,12 @@
-export type SupportedLocale = 'hu' | 'en';
+export type SupportedLocale = 'hu' | 'en' | 'de';
 export type RouteKey = 'home' | 'references' | 'services' | 'about' | 'contact';
 
 const routeMap: Record<RouteKey, Record<SupportedLocale, string>> = {
-  home: { hu: '/hu', en: '/en' },
-  references: { hu: '/hu/referenciak', en: '/en/portfolio' },
-  services: { hu: '/hu/szolgaltatasok', en: '/en/services' },
-  about: { hu: '/hu/rolunk', en: '/en/about' },
-  contact: { hu: '/hu/kapcsolat', en: '/en/contact' },
+  home: { hu: '/hu', en: '/en', de: '/de' },
+  references: { hu: '/hu/referenciak', en: '/en/portfolio', de: '/de/referenzen' },
+  services: { hu: '/hu/szolgaltatasok', en: '/en/services', de: '/de/leistungen' },
+  about: { hu: '/hu/rolunk', en: '/en/about', de: '/de/ueber-uns' },
+  contact: { hu: '/hu/kapcsolat', en: '/en/contact', de: '/de/kontakt' },
 };
 
 const legacyPathMap: Record<string, RouteKey> = {
@@ -25,6 +25,7 @@ const normalizePath = (pathname: string): string => {
 export const getLocaleFromPath = (pathname: string): SupportedLocale => {
   const normalizedPath = normalizePath(pathname);
   if (normalizedPath === '/en' || normalizedPath.startsWith('/en/')) return 'en';
+  if (normalizedPath === '/de' || normalizedPath.startsWith('/de/')) return 'de';
   return 'hu';
 };
 
@@ -55,6 +56,7 @@ export const getLocaleAlternates = (pathname: string) => {
   return {
     hu: getLocalizedPath(routeKey, 'hu'),
     en: getLocalizedPath(routeKey, 'en'),
+    de: getLocalizedPath(routeKey, 'de'),
     xDefault: getLocalizedPath(routeKey, 'en'),
   };
 };
@@ -74,6 +76,12 @@ export const getLanguageSwitcherLinks = (pathname: string) => {
       label: 'EN',
       href: getLocalizedPath(routeKey, 'en'),
       ariaLabel: 'English page',
+    },
+    {
+      locale: 'de' as const,
+      label: 'DE',
+      href: getLocalizedPath(routeKey, 'de'),
+      ariaLabel: 'Deutsche Seite',
     },
   ];
 };

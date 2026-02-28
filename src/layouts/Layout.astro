@@ -42,6 +42,7 @@ const alternates = getLocaleAlternates(Astro.url.pathname);
     <Analytics />
     <link rel="alternate" hreflang="hu-HU" href={String(getCanonical(alternates.hu))} />
     <link rel="alternate" hreflang="en-GB" href={String(getCanonical(alternates.en))} />
+    <link rel="alternate" hreflang="de-DE" href={String(getCanonical(alternates.de))} />
     <link rel="alternate" hreflang="x-default" href={String(getCanonical(alternates.xDefault))} />
 
     <!-- Comment the line below to disable View Transitions -->

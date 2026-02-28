@@ -25,7 +25,7 @@ const {
   twitter = {},
 } = Astro.props;
 const locale = getLocaleFromPath(Astro.url.pathname);
-const openGraphLocale = locale === 'en' ? 'en_GB' : 'hu_HU';
+const openGraphLocale = locale === 'en' ? 'en_GB' : locale === 'de' ? 'de_DE' : 'hu_HU';
 
 const seoProps: AstroSeoProps = merge(
   {

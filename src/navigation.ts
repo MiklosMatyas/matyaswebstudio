@@ -15,6 +15,18 @@ export const getHeaderData = (locale: SupportedLocale) => {
     };
   }
 
+  if (locale === 'de') {
+    return {
+      links: [
+        { text: 'Referenzen', href: links.references },
+        { text: 'Leistungen', href: links.services },
+        { text: 'Über Uns', href: links.about },
+        { text: 'Kontakt', href: links.contact },
+      ],
+      actions: [],
+    };
+  }
+
   return {
     links: [
       { text: 'Referenciák', href: links.references },
@@ -45,6 +57,25 @@ export const getFooterData = (locale: SupportedLocale) => {
       secondaryLinks: [],
       socialLinks: [],
       footNote: '2026 · All rights reserved.',
+    };
+  }
+
+  if (locale === 'de') {
+    return {
+      links: [
+        {
+          title: '',
+          links: [
+            { text: 'Referenzen', href: links.references },
+            { text: 'Leistungen', href: links.services },
+            { text: 'Über Uns', href: links.about },
+            { text: 'Kontakt', href: links.contact },
+          ],
+        },
+      ],
+      secondaryLinks: [],
+      socialLinks: [],
+      footNote: '2026 · Alle Rechte vorbehalten.',
     };
   }
 

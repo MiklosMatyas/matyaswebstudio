@@ -1,7 +1,7 @@
 import { defineMiddleware } from 'astro/middleware';
 
 const allowedPages = new Set(['/', '/referenciak', '/services', '/about', '/contact', '/404']);
-const allowedPrefixes = ['/hu', '/en'];
+const allowedPrefixes = ['/hu', '/en', '/de'];
 
 const hasStaticFileExtension = (pathname: string) =>
   /\.[a-zA-Z0-9]+$/.test(pathname) ||

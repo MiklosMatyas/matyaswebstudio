@@ -23,8 +23,16 @@ export const GET = async () => {
 
   const huHeaderLinks = flattenLinks(getHeaderData('hu').links as HeaderLink[]);
   const enHeaderLinks = flattenLinks(getHeaderData('en').links as HeaderLink[]);
+  const deHeaderLinks = flattenLinks(getHeaderData('de').links as HeaderLink[]);
 
-  const urls = [getLocalizedPath('home', 'hu'), getLocalizedPath('home', 'en'), ...huHeaderLinks, ...enHeaderLinks]
+  const urls = [
+    getLocalizedPath('home', 'hu'),
+    getLocalizedPath('home', 'en'),
+    getLocalizedPath('home', 'de'),
+    ...huHeaderLinks,
+    ...enHeaderLinks,
+    ...deHeaderLinks,
+  ]
     .map((href) => {
       try {
         return new URL(href, siteUrl);
