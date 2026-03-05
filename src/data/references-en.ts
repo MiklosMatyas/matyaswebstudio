@@ -47,6 +47,25 @@ export const referencesItems = [
     url: 'https://bentleylab.hu',
   },
   {
+    title: 'Tiffer 21 Alba Kft.',
+    subtitle: 'Complete website renewal for an official Kärcher distributor and authorised service partner.',
+    description:
+      'We rebuilt the site into a modern, conversion-focused platform that presents products, service capabilities, and business information in a clear structure. The information architecture and UX were refined to support faster decision-making, higher-quality quote requests, and stronger organic visibility in search.',
+    items: [
+      { title: 'Full website renewal with a modern mobile-first layout' },
+      { title: 'Product catalogue setup with clear category logic' },
+      { title: 'Service and maintenance offering presented in a structured flow' },
+      { title: 'Quote request form designed for better lead quality' },
+      { title: 'On-page SEO improvements across technical and content layers' },
+      { title: 'Providing our own server hosting service for fast website loading' },
+    ],
+    image: {
+      src: '~/assets/images/websites/website-tiffer21.webp',
+      alt: 'Tiffer 21 Alba website renewal',
+    },
+    url: 'https://tiffer21.hu/',
+  },
+  {
     title: 'Abasar Industrial Zone',
     subtitle: 'English-language website for an industrial zone development project.',
     description:

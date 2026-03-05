@@ -48,6 +48,25 @@ export const referencesItems = [
     url: 'https://bentleylab.hu',
   },
   {
+    title: 'Tiffer 21 Alba Kft.',
+    subtitle: 'Kompletter Website-Relaunch für einen offiziellen Kärcher Fachhändler und autorisierten Servicepartner.',
+    description:
+      'Im Projekt haben wir den Webauftritt in eine moderne, leistungsorientierte Plattform überführt, die Produktangebot, Serviceleistungen und Unternehmensinformationen klar strukturiert darstellt. Die inhaltliche und technische Architektur wurde gezielt auf bessere Nutzerführung, qualifiziertere Anfragen und stärkere Sichtbarkeit in Suchmaschinen ausgerichtet.',
+    items: [
+      { title: 'Vollständiger Website-Relaunch mit mobilem Fokus' },
+      { title: 'Produktkatalog mit klarer Kategorienlogik' },
+      { title: 'Strukturierte Darstellung von Service- und Wartungsleistungen' },
+      { title: 'Angebotsformular für präzisere und schnellere Anfragen' },
+      { title: 'On-page-SEO-Optimierung auf technischer und inhaltlicher Ebene' },
+      { title: 'Bereitstellung unseres eigenen Server-Hosting-Dienstes für schnelles Laden von Websites' },
+    ],
+    image: {
+      src: '~/assets/images/websites/website-tiffer21.webp',
+      alt: 'Website-Relaunch für Tiffer 21 Alba',
+    },
+    url: 'https://tiffer21.hu/',
+  },
+  {
     title: 'Abasar Industrial Zone',
     subtitle: 'Englischsprachige Website für ein Industriegebietsprojekt.',
     description:

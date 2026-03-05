@@ -48,6 +48,25 @@ export const referenciakItems = [
     url: 'https://bentleylab.hu',
   },
   {
+    title: 'Tiffer 21 Alba Kft.',
+    subtitle: 'Komplett weboldal-felújítás hivatalos Kärcher forgalmazó és szakszerviz számára.',
+    description:
+      'A projekt során egy korszerű, üzletileg jól működő weboldalt alakítottunk ki, amely átláthatóan mutatja be a cég termékkínálatát, szervizszolgáltatásait és kapcsolódó megoldásait. A tartalmi és technikai struktúrát úgy építettük fel, hogy támogassa a gyors tájékozódást, az ajánlatkérések növelését és a keresőkből érkező releváns érdeklődők elérését.',
+    items: [
+      { title: 'Komplett weboldal-felújítás modern, mobilbarát felépítéssel' },
+      { title: 'Termékkatalógus kialakítása jól kereshető struktúrával' },
+      { title: 'Szolgáltatási területek és szervizfolyamatok egyértelmű bemutatása' },
+      { title: 'Ajánlatkérő űrlap a gyorsabb és pontosabb beérkező megkeresésekhez' },
+      { title: 'On-page SEO optimalizálás technikai és tartalmi oldalon' },
+      { title: 'Saját szerver hosting szolgáltatás biztosítása a weboldal gyors betöltéséhez' },
+    ],
+    image: {
+      src: '~/assets/images/websites/website-tiffer21.webp',
+      alt: 'Tiffer 21 Alba Kft. weboldal-felújítás',
+    },
+    url: 'https://tiffer21.hu/',
+  },
+  {
     title: 'Abasár Industrial Zone',
     subtitle: 'Ipari területet bemutató weboldal fejlesztése angol nyelven.',
     description:
@@ -170,7 +189,7 @@ export const referenciakItems = [
     title: 'Happy Flex Kft.',
     subtitle: 'Magyar kozmetikai gyártó cég webáruházának és közösségi média oldalainak fejlesztése.',
     description:
-      'Egy magyar kozmetikai gyártó cég webáruházának és közösségi média oldalainak fejlesztése volt a feladat. A weboldal célja, hogy bemutassa a vállalat munkáját, és megkönnyítse az ügyfelek számára a kapcsolatfelvételt és a vásárlást. Folyamatosan készítünk új tartalmakat a közösségi média platformokra, hogy növeljük a vállalat online jelenlétét és elköteleződését.',
+      'Egy magyar kozmetikai gyártó cég webáruházának és közösségi média oldalainak fejlesztése volt a feladat. A weboldal célja, hogy bemutassa a cég munkáját, és megkönnyítse az ügyfelek számára a kapcsolatfelvételt és a vásárlást. Folyamatosan készítünk új tartalmakat a közösségi média platformokra, hogy növeljük a vállalat online jelenlétét és elköteleződését.',
     items: [
       { title: 'Webáruház frissítése' },
       { title: 'Közösségi média oldalak tartalomfejlesztése' },
